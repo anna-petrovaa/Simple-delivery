@@ -118,3 +118,22 @@ header{
     margin-top: 24px;
     margin-bottom:32px ;
 }
+
+.progress-container-span{
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+.progress-container {
+    width: 464px;
+    height: 4px;
+    background-color: #CED2DA;
+    border-radius: 5px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    width: 14%; /* Начальная ширина */
+    transition: width 0.5s ease; /* Плавный переход */
+  }

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" href="/calculate.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/assets/logo.png" alt="Логотип">
+        </div>
+        <nav>
+          <a href="" class="navigation" >Профиль</a>
+          <a href="" class="navigation">История</a>
+        <button class="button-header">Выйти</button>
+       </header>
+       <main>
+       <section>
+        <div class="main">
+           <div class="left-container">
+               <h1 class="left-container-h1">Мы доставим <br>Ваш заказ</h1>
+               <span class="left-container-span">Отправляйте посылки <br> в приложении Шифт Delivery</span>
+                <div class="left-card">
+                    <img class="img-package" src="/assets/package-open.png" alt="Посылка">
+                    <img  class="img-qr" src="/assets/QR_koronapay.png" alt="QR code">
+                    <span class="left-card-span">Наведите камеру <br> телефона на QR‑код</span>
+                </div>
+           </div>
+                
+
+           <div class="right-container">
+              <h2 class="right-container-h2">Рассчитать доставку</h2>
+
+              <form name="deliveryForm" class="form" id="form-id" >
+                  <div class="form-item">
+                  <label for="city-select-first">Город отправки</label>
+                   <select class="city-select-send"  name="citySend" id="city-select-first">
+                     <option value="">-- Выберите город отправки --</option>
+                   </select>
+                    <div class="container-span suggestions-send">
+                    </div>
+                </div>
+                <div class="form-item">
+                   <label for="city-select">Город назначения</label>
+                   <select class="city-select" name="cityReceive" id="city-select">
+                     <option value="">-- Выберите город назначения --</option>
+                   
+                   </select>
+                    <div class="container-span suggestions-receive">
+                   </div>
+                </div>
+
+                <div class="container-toggle-switch">
+                 <span>Выберите размер посылки</span>
+                <div class="toggle-switch">
+                  <input type="radio" class="toggle-switch-approximate" id="approximate" name="size" checked>
+                  <label for="approximate">Примерные</label>
+                  
+                  <input type="radio"  class="toggle-switch-exact" id="exact" name="size" >
+                  <label for="exact">Точные</label>
+                </div>
+                </div>
+                
+                    <div class="form-item">
+                    <label for="select-approximate">Размер посылки</label>
+                    <!-- <select class="select-size" name="packageSize" id="city-select">
+                      <option value="">-- Выберите размер посылки --</option>
+                      <option value="approximate"> Примерные </option>
+                      <option value="exact"> Точные </option>
+                    </select>  --> <!-- любой текст -->
+                      <!--<button class="button-approximate">Примерные размеры</button>
+                    <button class="button-exact">Точные размеры </button> -->
+
+                    <select class = "select-approximate none " name="select-approximate" id="select-approximate"> </select>
+                      
+                  
+
+                  <div class="container-input-exact none">
+
+                    <label class="input-label"> Длина
+                      <input type="text" class="input-length"  placeholder="см" >
+                    </label>
+
+                    <label class="input-label"> Ширина
+                      <input type="text" class="input-width"  placeholder="см"  >
+                    </label>
+
+                    <label class="input-label"> Высота
+                      <input type="text" class="input-height" placeholder="см"  >
+                    </label>
+
+                    <label class="input-label"> Вес
+                      <input type="text" class="input-weight" placeholder="кг"  >
+                    </label>
+
+
+                  </div>
+
+
+                </div>
+
+              </form>
+
+              <button  class="calculate-form-button" type="submit" form="form-id">Рассчитать</button>
+
+              
+           </div>
+        </div>
+       </section>
+      </main>
+
+  <script type="module" src="index.mjs"></script>
+</body>
+</html>

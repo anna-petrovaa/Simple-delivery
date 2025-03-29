@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function calculate(event) {
     //?  async нужно ли? сработает при кнопке рассчитать
     event.preventDefault();
+    saveExactTypeSize();
     try {
       //window.location.href = "delivery.html";
 
@@ -99,11 +100,11 @@ document.addEventListener("DOMContentLoaded", () => {
       //console.log(calculateData);
       //console.log("calculateData.options", calculateData.options[0].days);
       localStorage.setItem("calculateData", JSON.stringify(calculateData));
-      standartPrice.textContent = `${calculateData.options[0].price} ₽`;
-      standartDay.textContent = `${calculateData.options[0].days} рабочих дней`;
+      //standartPrice.textContent = `${calculateData.options[0].price} ₽`;
+      //standartDay.textContent = `${calculateData.options[0].days} рабочих дней`;
 
-      expressPrice.textContent = `${calculateData.options[1].price} ₽`;
-      expressDay.textContent = `${calculateData.options[1].days} рабочих дней`;
+      //expressPrice.textContent = `${calculateData.options[1].price} ₽`;
+      //expressDay.textContent = `${calculateData.options[1].days} рабочих дней`;
       window.location.href = "delivery.html";
     } catch (err) {
       alert(err);
@@ -113,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   getPoints();
   getTypes();
-  saveExactTypeSize();
 
   /**скрывает и показывает выбор размеров в зависимости от типа размера */
   function choseShowType() {

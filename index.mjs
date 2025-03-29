@@ -6,10 +6,6 @@ import {
   inputExactWidth,
   inputExactHeight,
   inputExactWeight,
-  standartPrice,
-  standartDay,
-  expressPrice,
-  expressDay,
 } from "./js/formFiels.mjs";
 import { getPoints } from "./js/getPoints.mjs";
 import { getTypes, saveExactTypeSize } from "./js/getTypes.mjs";
@@ -25,25 +21,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const radioApproximate = document.querySelector(".toggle-switch-approximate");
   const radioExact = document.querySelector(".toggle-switch-exact");
 
-  //const standartPrice = document.querySelector(".standart-price"); //стоимость доставки
-  //console.log(standartPrice, "селектор  standartPrice");
-  //const standartDay = document.querySelector(".standart-span"); //длительность доставки
-
-  //const expressPrice = document.querySelector(".express-price");
-  //const expressDay = document.querySelector(".express-span");
-
   async function calculate(event) {
     //?  async нужно ли? сработает при кнопке рассчитать
     event.preventDefault();
     saveExactTypeSize();
+
+    if (!citySelectSend.value || !approximateSelect.value) {
+      alert("Заполните поля формы");
+      return;
+    }
+
+    if (
+      radioExact.checked &&
+      (inputExactLength.value.length == 0 ||
+        inputExactWidth.value.length == 0 ||
+        inputExactHeight.value.length == 0 ||
+        inputExactWeight.value.length == 0)
+    ) {
+      alert("Заполните поля формы по размерам");
+      return;
+    }
+
+    if (radioApproximate.checked && !approximateSelect.value) {
+      alert("Заполните все поля формы.Выберете размер посылки ");
+      return;
+    }
+
     try {
-      //window.location.href = "delivery.html";
-
-      // if (selectSize.value == "exact") {
-      //   validInputExact();
-      // }
-      // window.location.href = "delivery.html";
-
       const payload = {};
 
       if (radioApproximate.checked) {
@@ -100,11 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
       //console.log(calculateData);
       //console.log("calculateData.options", calculateData.options[0].days);
       localStorage.setItem("calculateData", JSON.stringify(calculateData));
-      //standartPrice.textContent = `${calculateData.options[0].price} ₽`;
-      //standartDay.textContent = `${calculateData.options[0].days} рабочих дней`;
-
-      //expressPrice.textContent = `${calculateData.options[1].price} ₽`;
-      //expressDay.textContent = `${calculateData.options[1].days} рабочих дней`;
       window.location.href = "delivery.html";
     } catch (err) {
       alert(err);
@@ -133,31 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  //choseType();
-  //переписать
-  function validInputExact() {
-    if (inputExactLength.value.length == 0) {
-      alert("Поле не должно быть пустым");
-    }
-
-    if (inputExactWidth.value.length == 0) {
-      alert("Поле не должно быть пустым");
-    }
-
-    if (inputExactHeight.value.length == 0) {
-      alert("Поле не должно быть пустым");
-    }
-
-    if (inputExactWeight.value.length == 0) {
-      alert("Поле не должно быть пустым");
-    }
-  }
-
   //POST запрос!!
   async function postDeliveryCalc(data) {
     try {
-      //где-то нужно получить json перед тем как отправить ?
-
       const response = await fetch(
         "https://shift-intensive.ru/api/delivery/calc",
         {
@@ -200,12 +177,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   calculateButton.addEventListener("click", calculate);
-  //selectSize.addEventListener("change", choseType);
+
   radioApproximate.addEventListener("click", choseShowType);
   radioExact.addEventListener("click", choseShowType);
 
-  calculateButton.addEventListener("click", saveExactTypeSize);
-  calculateButton.addEventListener("click", saveExactTypeSize);
-
-  //calculateButton.addEventListener("click", postDeliveryCalc);
+  //calculateButton.addEventListener("click", saveExactTypeSize);
 });

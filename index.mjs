@@ -25,25 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     //?  async нужно ли? сработает при кнопке рассчитать
     event.preventDefault();
     saveExactTypeSize();
+    let validationResult = calculateValidation();
 
-    if (!citySelectSend.value || !approximateSelect.value) {
-      alert("Заполните поля формы");
-      return;
-    }
-
-    if (
-      radioExact.checked &&
-      (inputExactLength.value.length == 0 ||
-        inputExactWidth.value.length == 0 ||
-        inputExactHeight.value.length == 0 ||
-        inputExactWeight.value.length == 0)
-    ) {
-      alert("Заполните поля формы по размерам");
-      return;
-    }
-
-    if (radioApproximate.checked && !approximateSelect.value) {
-      alert("Заполните все поля формы.Выберете размер посылки ");
+    if (validationResult == false) {
+      alert("Заполните все поля формы");
       return;
     }
 
@@ -130,6 +115,41 @@ document.addEventListener("DOMContentLoaded", () => {
         hideInputExactContainer();
       }
     }
+  }
+
+  function calculateValidation() {
+    let isValid;
+    if (!citySelectSend.value || !approximateSelect.value) {
+      //alert("Заполните поля формы");
+      isValid = false;
+      return isValid;
+    }
+
+    if (!citySelectReceipt.value || !approximateSelect.value) {
+      //alert("Заполните поля формы");
+      isValid = false;
+      return isValid;
+    }
+
+    if (
+      radioExact.checked &&
+      (inputExactLength.value.length == 0 ||
+        inputExactWidth.value.length == 0 ||
+        inputExactHeight.value.length == 0 ||
+        inputExactWeight.value.length == 0)
+    ) {
+      //alert("Заполните поля формы по размерам");
+      isValid = false;
+      return isValid;
+    }
+
+    if (radioApproximate.checked && !approximateSelect.value) {
+      //alert("Заполните все поля формы.Выберете размер посылки ");
+      isValid = false;
+      return isValid;
+    }
+    isValid = true;
+    return isValid;
   }
 
   //POST запрос!!

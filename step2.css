@@ -1,0 +1,116 @@
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family:airbnb-c; 
+    src: url(../fonts/AirbnbCereal_W_Bk.otf);
+}
+@font-face {
+    font-family: eksell-c;
+    src: url(../fonts/Eksell-Display-TRIAL-Medium.ttf);
+}
+
+:root{
+--mainColor:#3685FB;
+--darkColor:#000000;
+--greyColor:#344051;
+--sectionColor:#F5F5F5;
+}
+
+ html{
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    }
+    
+    main {
+    width: 100%;
+    height: 100%;
+    
+    }
+    
+    section {
+    width: 100%;
+    height: 100%;
+    }
+    
+    .main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-basis: 40%;
+    justify-content: space-between;
+    background-color: var(--sectionColor);
+    }
+/*
+body{
+    height: 100%;
+    width: 100%;
+    font-family:airbnb-c;
+    
+}
+main {
+    max-width: 1440px;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    max-width: 1440px;
+    padding: 0px 240px;
+}*/
+
+
+.navigation{
+    font-size: 16px;
+    font-family:airbnb-c;
+    line-height: 112%;
+    text-decoration: none;
+    margin: 0 150px;
+    color: var(--darkColor);
+
+}
+.navigation:hover{
+    color: var(--mainColor);
+}
+
+.button-header{
+   background-color: var(--mainColor); 
+   color: #ffffff;
+   border: none;
+   /*border-radius: 10%;*/
+   font-size: 16;
+   font-weight: 500;
+   width:70px ;
+   height:40px;
+
+
+}
+
+
+
+.progress-container-span{
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+.progress-container {
+    width: 464px;
+    height: 4px;
+    background-color: #CED2DA;
+    border-radius: 5px;
+  }
+  
+  .progress-bar {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    width: 14%; /* Начальная ширина */
+    transition: width 0.5s ease; /* Плавный переход */
+  }

@@ -37,18 +37,13 @@ export async function getTypes() {
   }
 }
 
-//export let exactTypeSize = [];
+
 export function saveExactTypeSize() {
   let exactTypeSize = [];
   exactTypeSize.push(inputExactLength.value);
   exactTypeSize.push(inputExactWidth.value);
   exactTypeSize.push(inputExactWeight.value);
   exactTypeSize.push(inputExactHeight.value);
-  // exactTypeSize.forEach((item) => {
-  //     if (item.length == 0) {
-  //       item = 0;
-  //     }
-  //   });
   localStorage.setItem("exactTypes", JSON.stringify(exactTypeSize));
   exactTypeSize = [];
 }

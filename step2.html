@@ -17,7 +17,8 @@
     <button class="button-header">Выйти</button>
    </header> 
    <main>
-
+    <section>
+    <div class="main-container">
     <h2 class="right-container-h2">Данные отправителя</h2>
     <span class="progress-container-span">Шаг 2 из 7</span>
             <div class="progress-container">
@@ -28,33 +29,42 @@
 
         <div class="form-item">
             <label class="input-label"> Фамилия
-                <input type="text" class="input-length"  placeholder="Фамилия" >
+                <input type="text" class="input-surname"  placeholder="Фамилия" >
               </label>
+              <span class="error-surname-one none">	
+                Поле является обязательным</span>
+                <span class="error-surname-two none">	
+                  Недопустимый символ в строке</span>
        </div>
      
        <div class="form-item">
-        <label class="input-label"> Имя
-            <input type="text" class="input-length"  placeholder="Имя" >
+        <label class="input-label" > Имя
+            <input type="text" class="input-name"  placeholder="Имя" >
           </label>
    </div>
         
    <div class="form-item">
     <label class="input-label"> Отчество
-        <input type="text" class="input-length"  placeholder="Отчество" >
+        <input type="text" class="input-patronymic"  placeholder="Отчество" >
       </label>
     </div>
     
     <div class="form-item">
-        <label class="input-label"> Номер телефона
-            <input type="text" class="input-length"  placeholder="Номер телефона" >
+        <label class="input-label "> Номер телефона
+            <input type="text" class="input-number"  placeholder="Номер телефона" >
           </label>
         </div>
         
-    
-     <button>Назад</button>
-     <button>Продолжить</button>
+      <div aria-colcount="button-container">
+     <button class="button-back">Назад</button>
+     <button class="button-forward">Продолжить</button>
+    </div>
 
     </form>
+  </div>
+  </section>
    </main>
+   
+   <script type = "module" src="./js/step2.mjs"></script>
 </body>
 </html>

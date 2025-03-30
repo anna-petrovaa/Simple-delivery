@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const expressPrice = document.querySelector(".express-price");
   const expressDay = document.querySelector(".express-span");
   let calculateData = JSON.parse(localStorage.getItem("calculateData"));
+
+  if (!calculateData) {
+    window.location.href = "index.html";
+  }
+
   standartPrice.textContent = `${calculateData.options[0].price} ₽`;
   standartDay.textContent = `${calculateData.options[0].days} рабочих дней`;
 

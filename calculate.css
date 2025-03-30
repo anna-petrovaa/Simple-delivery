@@ -38,13 +38,32 @@ body {
        width: 100%;
     }
 
-    nav{
+    nav{ display: flex;
+        
+    }
+
+    nav ul{
 
         display: flex;
-        justify-content: flex-start;
-        /*margin: auto;*/
+        list-style: none; /* Убираем стандартные маркеры списка */
+        
+        margin: auto;
         width: 100%;
     }
+
+    nav ul li{
+        display: flex;
+    
+    }
+
+    nav ul li a {
+        
+        display: block; /* Чтобы ссылка занимала всю область li */
+        
+      }
+
+
+
     
     main {
     width: 100%;

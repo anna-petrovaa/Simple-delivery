@@ -139,3 +139,31 @@
     width: 14%; /* Начальная ширина */
     transition: width 0.5s ease; /* Плавный переход */
   }
+  .express-radio-input,.standart-radio-input {
+    display: none; /* Скрываем радиокнопки*/
+}
+
+  /*.radio-input:checked + .card-label {
+    background-color: #007BFF;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    border-color: #3685FB;}
+
+
+
+/*.card-label {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}*/
+
+.express-card-container.checked{
+    border-color: var(--mainColor);
+}
+
+.standart-card-container.checked{
+    border-color: var(--mainColor);
+}

@@ -1,70 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/step2.css">
-</head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/step2.css"> </head>
+
 <body>
-   <header>
-    <div class="logo">
-        <img src="/assets/logo.png" alt="Логотип">
-    </div>
-    <nav>
-      <a href="" class="navigation" >Профиль</a>
-      <a href="" class="navigation">История</a>
-    <button class="button-header">Выйти</button>
-   </header> 
-   <main>
-    <section>
-    <div class="main-container">
-    <h2 class="right-container-h2">Данные отправителя</h2>
-    <span class="progress-container-span">Шаг 2 из 7</span>
-            <div class="progress-container">
-                <div class="progress-bar"></div>
+	<header>
+		<div class="logo"> <img src="/assets/logo.png" alt="Логотип"> </div>
+		<nav> <a href="" class="navigation">Профиль</a> <a href="" class="navigation">История</a>
+			<button class="button-header">Выйти</button>
+	</header>
+	<main>
+		<section>
+			<div class="main-container">
+				<form name="deliveryForm" class="form" id="form-id">
+					<div class="form-step" id="step2">
+						<h2 class="right-container-h2">Получатель</h2> <span class="progress-container-span">Шаг 2 из 7</span>
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+						<div class="form-item">
+							<label class="input-label"> Фамилия
+								<input type="text" class="input-surname" placeholder="Фамилия"> </label> <span class="error-surname-one none">	
+                Поле является обязательным</span> <span class="error-surname-two none">	
+                  Недопустимый символ в строке</span> </div>
+						<div class="form-item">
+							<label class="input-label"> Имя
+								<input type="text" class="input-name" placeholder="Имя"> </label>
+						</div>
+						<div class="form-item">
+							<label class="input-label"> Отчество
+								<input type="text" class="input-patronymic" placeholder="Отчество"> </label>
+						</div>
+						<div class="form-item">
+							<label class="input-label "> Номер телефона
+								<input type="tel" class="input-number" placeholder="Номер телефона"> </label>
+						</div>
+					
+					</div>
+
+
+
+
+
+          <div class="form-step" id="step3">
+						<h2 class="right-container-h2">Отправитель</h2> <span class="progress-container-span">Шаг 3 из 7</span>
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+						<div class="form-item">
+							<label class="input-label"> Фамилия
+								<input type="text" class="input-surname" placeholder="Фамилия"> </label> <span class="error-surname-one none">	
+                Поле является обязательным</span> <span class="error-surname-two none">	
+                  Недопустимый символ в строке</span> </div>
+						<div class="form-item">
+							<label class="input-label"> Имя
+								<input type="text" class="input-name" placeholder="Имя"> </label>
+						</div>
+						<div class="form-item">
+							<label class="input-label"> Отчество
+								<input type="text" class="input-patronymic" placeholder="Отчество"> </label>
+						</div>
+						<div class="form-item">
+							<label class="input-label "> Номер телефона
+								<input type="tel" class="input-number" placeholder="Номер телефона"> </label>
+						</div>
+				
+					</div>
+
+
+
+          <div class="form-step" id="step4">
+						<h2 class="right-container-h2">Откуда забирать</h2> <span class="progress-container-span">Шаг 4 из 7</span>
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+						<div class="form-item">
+							<label class="input-label"> Улица
+								<input type="text" class="input-surname" placeholder="Фамилия"> </label> <span class="error-surname-one none">	
+                Поле является обязательным</span> <span class="error-surname-two none">	
+                  Недопустимый символ в строке</span> </div>
+						<div class="form-item">
+							<label class="input-label"> Дом
+								<input type="text" class="input-name" placeholder="Имя"> </label>
+						</div>
+						<div class="form-item">
+							<label class="input-label"> Квартира
+								<input type="text" class="input-patronymic" placeholder="Отчество"> </label>
+						</div>
+						<div class="form-item">
+							<label class="input-label "> Заметка для курьера
+								<input type="text" class="input-number" placeholder="Номер телефона"> </label>
+						</div>
+						
+					</div>
+
+          <div class="form-step" id="step5">
+						<h2 class="right-container-h2">Куда доставить</h2> <span class="progress-container-span">Шаг 5 из 7</span>
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+						<div class="form-item">
+							<label class="input-label"> Улица
+								<input type="text" class="input-surname" placeholder="Фамилия"> </label> <span class="error-surname-one none">	
+                Поле является обязательным</span> <span class="error-surname-two none">	
+                  Недопустимый символ в строке</span> </div>
+						<div class="form-item">
+							<label class="input-label"> Дом
+								<input type="text" class="input-name" placeholder="Имя"> </label>
+						</div>
+						<div class="form-item">
+							<label class="input-label"> Квартира
+								<input type="text" class="input-patronymic" placeholder="Отчество"> </label>
+						</div>
+						<div class="form-item">
+							<label class="input-label "> Заметка для курьера
+								<input type="text" class="input-number" placeholder="Номер телефона"> </label>
+						</div>
+
+            <div class="form-item">
+							<label class="input-label "> Оставить у двери
+								<input  type="checkbox" class="input-number" placeholder="Номер телефона"> </label>
+						</div>
+
+				
+					</div>
+
+
+          <div class="form-step" id="step6">
+						<h2 class="right-container-h2">Оплата доставки</h2> <span class="progress-container-span">Шаг 6 из 7</span>
+						<div class="progress-container">
+							<div class="progress-bar"></div>
+						</div>
+						<div class="form-item">
+							<label class="input-label"> Получатель
+								<input type="radio" class="" name="payment"  value="" id=""> </label> 
               </div>
 
-    <form name="deliveryForm" class="form" id="form-id" >
+              <div class="form-item">
+                <label class="input-label"> Отправитель
+                  <input type="radio" class="" name="payment"  value="" id=""> </label> 
+                </div>
+						
+                <div  class="arrows">
+                  <button type="button" class="button-back">Назад</button>
+                  <button type="button" class="button-forward">Продолжить</button>
+                </div>
+					
+					</div>
 
-        <div class="form-item">
-            <label class="input-label"> Фамилия
-                <input type="text" class="input-surname"  placeholder="Фамилия" >
-              </label>
-              <span class="error-surname-one none">	
-                Поле является обязательным</span>
-                <span class="error-surname-two none">	
-                  Недопустимый символ в строке</span>
-       </div>
-     
-       <div class="form-item">
-        <label class="input-label" > Имя
-            <input type="text" class="input-name"  placeholder="Имя" >
-          </label>
-   </div>
-        
-   <div class="form-item">
-    <label class="input-label"> Отчество
-        <input type="text" class="input-patronymic"  placeholder="Отчество" >
-      </label>
-    </div>
-    
-    <div class="form-item">
-        <label class="input-label "> Номер телефона
-            <input type="text" class="input-number"  placeholder="Номер телефона" >
-          </label>
-        </div>
-        
-      <div aria-colcount="button-container">
-     <button class="button-back">Назад</button>
-     <button class="button-forward">Продолжить</button>
-    </div>
 
-    </form>
-  </div>
-  </section>
-   </main>
-   
-   <script type = "module" src="./js/step2.mjs"></script>
+
+
+
+				</form>
+			</div>
+		</section>
+	</main>
+	<script type="module" src="./js/step2.mjs"></script>
 </body>
+
 </html>

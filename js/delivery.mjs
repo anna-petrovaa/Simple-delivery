@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       standartCardContainer.classList.remove("checked");
       expressCardContainer.classList.add("checked");
     }
+    window.location.href = "step2.html";
   }
 
   radioStandart.addEventListener("change", choseDelivery);

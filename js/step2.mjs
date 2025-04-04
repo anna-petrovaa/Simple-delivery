@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputNumber = document.querySelector(".input-number");
   const errorSurnameOne = document.querySelector(".error-surname-one");
 
+  const form = document.querySelector(".form");
+
   function backDeliveryPage(event) {
     event.preventDefault();
     window.location.href = "delivery.html";

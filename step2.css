@@ -148,3 +148,59 @@ header{
     display: flex;
     flex-direction: row;
   }
+
+
+  section{
+    display: flex;
+    flex-direction: column;
+}
+
+.step7-list{
+    padding-top: 15px;
+    column-gap: 24px;
+    grid-row: 24px;
+}
+
+.step7-item{
+    list-style-type:none;
+    row-gap: 24px;
+    
+}
+
+.step7-card{
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    /*background-color:#F0F6FF;*/
+    background-color: aqua;
+    /*border: #3685FB;*/
+    max-height: 90px;
+    height: 90px;
+    max-width: 960px;
+    width: 960px;
+}
+
+.item1{
+    background-color: #3685FB;
+    max-width: 200px;
+    max-height: 40px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 48px;
+}
+
+.item3,.item2{
+    background-color: #3685FB;
+    max-width: 284px;
+    max-height: 42px;
+    padding-top: 24px;
+    padding-left: 48px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+    
+}

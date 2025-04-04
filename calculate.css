@@ -19,6 +19,7 @@
 --greyColor:#344051;
 --sectionColor:#F5F5F5;
 --whiteColor:#FFFFFF;
+--cardColor:#F0F6FF;
 }
 
  html{
@@ -173,7 +174,7 @@ header{
 .section{
     display: flex;
 }
-.main{
+.main-container{
     display: flex;
     padding: 0px 240px;
     background-color: var(--sectionColor);

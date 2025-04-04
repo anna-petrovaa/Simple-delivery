@@ -32,11 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (radioStandart.checked) {
       standartCardContainer.classList.add("checked");
       expressCardContainer.classList.remove("checked");
+      //console.log("Standart.checked");
     }
 
     if (radioExpress.checked) {
       standartCardContainer.classList.remove("checked");
       expressCardContainer.classList.add("checked");
+      //console.log("Express.checked");
     }
     window.location.href = "step2.html";
   }

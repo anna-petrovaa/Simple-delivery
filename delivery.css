@@ -20,6 +20,7 @@
     --sectionColor:#F5F5F5;
     --whiteColor:#FFFFFF;
     --bordColor:#E3E5E5;
+    
     }
     
      html{
@@ -162,8 +163,22 @@
 
 .express-card-container.checked{
     border-color: var(--mainColor);
+    background-color: var(--mainColor);
 }
 
 .standart-card-container.checked{
     border-color: var(--mainColor);
+    background-color: var(--mainColor);
+    
+}
+
+.express-card-container:hover{
+    background-color: var(--mainColor);
+    opacity: .5
+}
+
+.standart-card-container:hover{
+    background-color: var(--mainColor);
+    opacity: .5
+    
 }

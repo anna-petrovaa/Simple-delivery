@@ -37,6 +37,7 @@ body {
         /*max-width: 1440px;*/
        background-color:var(--whiteColor) ;
        width: 100%;
+       
     }
 
     nav{ display: flex;
@@ -106,6 +107,8 @@ body {
     header {
         position: fixed;
         background-color: var(--whiteColor);
+        /*max-width: 1000px;
+        margin: auto;*/
     }
     
     main {
@@ -131,10 +134,12 @@ header{
 
 .header-container{
     display: flex;
-    justify-content: space-between;
-    background-color: #ffffff;
-    max-width: 1440px;
-    padding: 0px 240px;
+    /*justify-content: space-between; вместо него в button-header применили margin-left
+    /*background-color: #ffffff; перенесла в родительский header*/
+    /*max-width: 1440px;*/
+    /*padding: 0px 240px; нельзя так */
+    max-width: 1000px;/*ограничиваем header */
+    margin: auto; /*чтобы  кнопку выйти оттолкнуть на максимум*/
     
 }
 
@@ -164,10 +169,11 @@ header{
    color: var(--whiteColor);
    border: none;
    /*border-radius: 10%;*/
-   font-size: 16;
+   font-size: 16px;
    font-weight: 500;
    width:70px ;
    height:40px;
+   margin-left: auto;
 
 
 }
@@ -249,7 +255,7 @@ header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 500px;
+    /*width: 500px;*/
     min-height: 500px;
     background-color: #ffffff;
     justify-content: space-around;

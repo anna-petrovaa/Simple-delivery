@@ -151,7 +151,7 @@ header{
     color: var(--darkColor);
     /*margin: 0 30px; замена на падинг-для увеличения зоны кликабельности */ 
     padding: 0 30px;
-    border: 1px solid transparent;
+    border: 1px solid transparent; /*чтобы текст история профиль меньше ехал*/
 
 }
 .navigation:hover{

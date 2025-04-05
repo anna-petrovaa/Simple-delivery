@@ -37,6 +37,8 @@ body {
         /*max-width: 1440px;*/
        background-color:var(--whiteColor) ;
        width: 100%;
+       position: fixed;
+       
        
     }
 
@@ -101,15 +103,6 @@ body {
         justify-content: space-between;
         padding: 113px 0px;
     }
-
-
-
-    header {
-        position: fixed;
-        background-color: var(--whiteColor);
-        /*max-width: 1000px;
-        margin: auto;*/
-    }
     
     main {
         background-color: var(--sectionColor);
@@ -156,12 +149,15 @@ header{
     text-decoration: none;
     /*margin: 0 150px;*/
     color: var(--darkColor);
-    margin: 0 30px;
-    
+    /*margin: 0 30px; замена на падинг-для увеличения зоны кликабельности */ 
+    padding: 0 30px;
+    border: 1px solid transparent;
 
 }
 .navigation:hover{
     color: var(--mainColor);
+    border: 1px solid var(--mainColor);
+    box-sizing: border-box; /*чтобы текст меньше ехал*/
 }
 
 .button-header{

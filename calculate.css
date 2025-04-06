@@ -173,6 +173,12 @@ header{
 
 
 }
+
+
+.logo{
+    margin-right: 15px; /*оттолкнули логотип от синей рамки профиля */
+}
+
 .section{
     display: flex;
 }
@@ -191,10 +197,6 @@ header{
     align-items: center;
     margin:113px 0px;
     /*padding-left: 240px;*/
-    
-    
-    
-   
 }
 .left-container-h1{
     margin: auto;
@@ -258,11 +260,6 @@ header{
     /*padding-right: 240px;*/
 
 }
-
-
-
-
-
 
 
 .right-container-h2{

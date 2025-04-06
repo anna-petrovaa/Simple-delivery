@@ -1,150 +1,169 @@
-*{
-    margin: 0; 
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
-    font-family:airbnb-c; 
-    src: url(../fonts/AirbnbCereal_W_Bk.otf);
+  font-family: airbnb-c;
+  src: url(../fonts/AirbnbCereal_W_Bk.otf);
 }
 @font-face {
-    font-family: eksell-c;
-    src: url(../fonts/Eksell-Display-TRIAL-Medium.ttf);
+  font-family: eksell-c;
+  src: url(../fonts/Eksell-Display-TRIAL-Medium.ttf);
 }
 
-:root{
-    --mainColor:#3685FB;
-    --darkColor:#000000;
-    --greyColor:#344051;
-    --sectionColor:#F5F5F5;
-    --whiteColor:#FFFFFF;
-    --bordColor:#E3E5E5;
-    
-    }
-    
-     html{
-        height: 100%;
-        width: 100%;
-    }
-    
-    body {
-        height: 100vh;
-        width: 100vw;
-        background-color: var(--sectionColor);
-        }
-    
-        header{
-            /*max-width: 1440px;*/
-           background-color:var(--whiteColor) ;
-           width: 100%;
-        }
-.navigation{
-    font-size: 16px;
-    font-family:airbnb-c;
-    line-height: 112%;
-    text-decoration: none;
-    margin: 0 150px;
-    color: var(--darkColor);
-
-}
-.navigation:hover{
-    color: var(--mainColor);
+:root {
+  --mainColor: #3685fb;
+  --darkColor: #000000;
+  --greyColor: #344051;
+  --sectionColor: #f5f5f5;
+  --whiteColor: #ffffff;
+  --bordColor: #e3e5e5;
 }
 
-.button-header{
-   background-color: var(--mainColor); 
-   color: #ffffff;
-   border: none;
-   /*border-radius: 10%;*/
-   font-size: 16;
-   font-weight: 500;
-   width:70px ;
-   height:40px;
-
-
-}
-.section{
-    display: flex;
-}
-.main-container{
-    display: flex;
-    flex-direction: column;
-    padding: 0px 240px;
-    background-color: var(--sectionColor);
-}
-.main-container-h1{
-    font-size: 32px;
-    margin-top: 48px;
-    
-}
-.express-card-container,.standart-card-container{
-    height: 120px;
-    width: 468px;
-    display: flex;
-    flex-direction: row;
-    background-color: #ffffff;
-    border-radius: 10px;
-    margin-top: 24px;
-    border-style: solid; 
-    border-width: 0.1px; 
-    border-color: var(--bordColor); 
+html {
+  height: 100%;
+  width: 100%;
 }
 
-.left-card-img{
-    margin: 16px 16px  56px;
+body {
+  height: 100vh;
+  width: 100vw;
 }
 
-.right-card{
-    display: flex;
-    flex-direction: column;
-    margin-top: 16px;
+header {
+  display: flex;
+  max-width: 1000px;
+  background-color: var(--whiteColor);
+  width: 100%;
+  position: fixed;
+  margin: auto;
 }
 
-.express-p,.standart-p{
-    color: var(--textColor);
-    font-size: 12px;
-    margin-top: 16px;
-}
-.express-price,.standart-price{
-    font-size: 24px;
-    margin-top: 8px;
-    
-}
-.express-span,.standart-span{
-    color:var(--textColor) ;
-    font-size: 12px;
-    margin-top: 5px;
+main {
+  margin: auto;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 113px 0px;
 }
 
-.banner-img{
-    margin-top: 24px;
-    margin-bottom:32px ;
+.logo {
+  padding: 0px 30px;
+}
+.navigation {
+  font-size: 16px;
+  font-family: airbnb-c;
+  line-height: 112%;
+  text-decoration: none;
+  padding: 0 30px;
+  color: var(--darkColor);
+  border: 1px solid transparent;
+}
+.navigation:hover {
+  color: var(--mainColor);
+  border: 1px solid var(--mainColor);
+  box-sizing: border-box; /*чтобы текст меньше ехал*/
 }
 
-.progress-container-span{
-    padding-top: 24px;
-    padding-bottom: 24px;
+.button-header {
+  background-color: var(--mainColor);
+  color: #ffffff;
+  border: none;
+  /*border-radius: 10%;*/
+  font-size: 16px;
+  font-weight: 500;
+  width: 70px;
+  height: 40px;
+  margin-left: auto;
+}
+.section {
+  display: flex;
+}
+.main-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: var(--sectionColor);
+  max-width: 1000px;
+}
+.main-container-h1 {
+  font-size: 32px;
+  margin-top: 48px;
+}
+.express-card-container,
+.standart-card-container {
+  height: 120px;
+  width: 468px;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 24px;
+  border-style: solid;
+  border-width: 0.1px;
+  border-color: var(--bordColor);
+}
+
+.left-card-img {
+  margin: 16px 16px 56px;
+}
+
+.right-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.express-p,
+.standart-p {
+  color: var(--textColor);
+  font-size: 12px;
+  margin-top: 16px;
+}
+.express-price,
+.standart-price {
+  font-size: 24px;
+  margin-top: 8px;
+}
+.express-span,
+.standart-span {
+  color: var(--textColor);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.banner-img {
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.progress-container-span {
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 .progress-container {
-    width: 464px;
-    height: 4px;
-    background-color: #CED2DA;
-    border-radius: 5px;
-  }
-  
-  .progress-bar {
-    height: 100%;
-    background-color: #4CAF50;
-    border-radius: 5px;
-    width: 14%; /* Начальная ширина */
-    transition: width 0.5s ease; /* Плавный переход */
-  }
-  .express-radio-input,.standart-radio-input {
-    display: none; /* Скрываем радиокнопки*/
+  width: 464px;
+  height: 4px;
+  background-color: #ced2da;
+  border-radius: 5px;
 }
 
-  /*.radio-input:checked + .card-label {
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  width: 14%; /* Начальная ширина */
+  transition: width 0.5s ease; /* Плавный переход */
+}
+.express-radio-input,
+.standart-radio-input {
+  display: none; /* Скрываем радиокнопки*/
+}
+
+/*.radio-input:checked + .card-label {
     background-color: #007BFF;
     color: white;
     border-radius: 8px;
@@ -161,24 +180,22 @@
     transition: background-color 0.3s ease;
 }*/
 
-.express-card-container.checked{
-    border-color: var(--mainColor);
-    background-color: var(--mainColor);
+.express-card-container.checked {
+  border-color: var(--mainColor);
+  background-color: var(--mainColor);
 }
 
-.standart-card-container.checked{
-    border-color: var(--mainColor);
-    background-color: var(--mainColor);
-    
+.standart-card-container.checked {
+  border-color: var(--mainColor);
+  background-color: var(--mainColor);
 }
 
-.express-card-container:hover{
-    background-color: var(--mainColor);
-    opacity: .5
+.express-card-container:hover {
+  background-color: var(--mainColor);
+  opacity: 0.5;
 }
 
-.standart-card-container:hover{
-    background-color: var(--mainColor);
-    opacity: .5
-    
+.standart-card-container:hover {
+  background-color: var(--mainColor);
+  opacity: 0.5;
 }

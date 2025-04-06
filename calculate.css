@@ -43,6 +43,7 @@ body {
     }
 
     nav{ display: flex;
+        margin: 0 15px;
         
     }
 
@@ -125,6 +126,10 @@ header{
     padding: 0px 240px;
 }*/
 
+header{
+    padding: 10px 0px; /*лучше padding родителю чем margin детям  */
+}
+
 .header-container{
     display: flex;
     /*justify-content: space-between; вместо него в button-header применили margin-left
@@ -175,9 +180,9 @@ header{
 }
 
 
-.logo{
-    margin-right: 15px; /*оттолкнули логотип от синей рамки профиля */
-}
+/*.logo{
+    margin-right: 15px; /*оттолкнули логотип от синей рамки профиля
+}*/
 
 .section{
     display: flex;

@@ -81,17 +81,6 @@ body {
     height: 100%;
    
     }
-    
-    /*.main {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-basis: 40%;
-    justify-content: space-between;
-   
-    
-    }*/
-
 
 
     main {
@@ -108,27 +97,7 @@ body {
     main {
         background-color: var(--sectionColor);
     }
-/*
-body{
-    height: 100%;
-    width: 100%;
-    font-family:airbnb-c;
-    
-}
-main {
-    max-width: 1440px;
-}
-header{
-    display: flex;
-    justify-content: space-around;
-    background-color: #ffffff;
-    max-width: 1440px;
-    padding: 0px 240px;
-}*/
 
-/*header{
-    padding: 10px 0px; /*лучше padding родителю чем margin детям  
-}*/
 
 .header-container{
     display: flex;
@@ -142,11 +111,6 @@ header{
     
 }
 
-
-/*.navigation-container{
-    display: flex;
-    flex-direction: row;
-}*/
 
 .navigation{
     font-size: 16px;
@@ -182,7 +146,7 @@ header{
 
 .logo{
     /*margin-right: 15px; */
-    padding: 20px 30px;/*оттолкнули логотип от синей рамки профиля*/
+    padding: 0px 30px;/*оттолкнули логотип от синей рамки профиля*/
 }
 
 .section{

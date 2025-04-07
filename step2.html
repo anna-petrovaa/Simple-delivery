@@ -17,16 +17,21 @@
 		<section>
 			<div class="main-container">
 				<form name="deliveryForm" class="form" id="form-id">
+                 
+                  <!--Шаг 2 Получатель начало-->
+
+
 					<div class="form-step" id="step2">
+
 						<h2 class="right-container-h2">Получатель</h2> <span class="progress-container-span">Шаг 2 из 7</span>
 						<div class="progress-container">
 							<div class="progress-bar"></div>
 						</div>
 						<div class="form-item">
 							<label class="input-label"> Фамилия
-								<input type="text" class="input-surname" placeholder="Фамилия"> </label> <span class="error-surname-one none">	
-                Поле является обязательным</span> <span class="error-surname-two none">	
-                  Недопустимый символ в строке</span> </div>
+								<input type="text" class="input-surname" placeholder="Фамилия"> </label> 
+								<span class="error-surname-one none">Поле является обязательным</span> 
+								<span class="error-surname-two none">Недопустимый символ в строке</span> </div>
 						<div class="form-item">
 							<label class="input-label"> Имя
 								<input type="text" class="input-name" placeholder="Имя"> </label>
@@ -41,11 +46,12 @@
 						</div>
 					
 					</div>
+					<!--Шаг 2 Получатель конец-->
 
 
 
 
-
+                    <!--Шаг 3 Отправитель начало-->
           <div class="form-step" id="step3">
 						<h2 class="right-container-h2">Отправитель</h2> <span class="progress-container-span">Шаг 3 из 7</span>
 						<div class="progress-container">
@@ -70,6 +76,8 @@
 						</div>
 				
 					</div>
+
+					<!--Шаг 3 Отправитель конец-->
 
 
 
@@ -153,7 +161,7 @@
 					</div>
 
 
-					<section class="form-step" id="step7">
+					<div class="form-step" id="step7">
 						<h2>Шаг 3: Подтверждение</h2>
 						<p>Пожалуйста, подтвердите введенные данные:</p>
 						<ul class="step7-list">
@@ -257,7 +265,7 @@
 							<button type="button" class="previous" onclick="previousStep(2)">Назад</button> 
 							<button type="submit" class="" onclick="submitForm(event)">Отправить</button>
 						</div>
-					</section>
+					</div>
 
 
 

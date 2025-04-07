@@ -2,11 +2,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const buttonBack = document.querySelector(".button-back");
   const buttonForward = document.querySelector(".button-forward");
 
-  const inputSurname = document.querySelector(".input-surname");
-  const inputName = document.querySelector(".input-name");
-  const inputPatronymic = document.querySelector(".input-patronymic");
-  const inputNumber = document.querySelector(".input-number");
-  const errorSurnameOne = document.querySelector(".error-surname-one");
+  const inputSurnameRecipient = document.querySelector(
+    ".input-surname-recipient"
+  );
+  const inputNameRecipient = document.querySelector(".input-name-recipient");
+  const inputPatronymicRecipient = document.querySelector(
+    ".input-patronymic-recipient"
+  );
+  const inputNumberRecipient = document.querySelector(
+    ".input-number-recipient"
+  );
+  const errorSurnameOneRecipient = document.querySelector(
+    ".error-surname-recipient-one"
+  );
+
+  const errorSurnameTwoRecipient = document.querySelector(
+    ".error-surname-recipient-two"
+  );
 
   const form = document.querySelector(".form");
 
@@ -15,13 +27,25 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "delivery.html";
   }
 
-  function validationName(event) {
+  function validationNameRecipient(event) {
     event.preventDefault();
-    if (inputSurname.value.length == 0) {
-      errorSurnameOne.classList.remove("none");
+    if (inputSurnameRecipient.value.length == 0) {
+      errorSurnameOneRecipient.classList.remove("none");
+      return false;
+    } else {
+      errorSurnameOneRecipient.classList.add("none");
+    }
+
+    if (!/^[а-я]+$/i.test(inputSurnameRecipient.value)) {
+      errorSurnameTwoRecipient.classList.remove("none");
+      return false;
+    } else {
+      console.log("Успех");
+      errorSurnameOneRecipient.classList.add("none");
     }
   }
 
-  buttonBack.addEventListener("click", backDeliveryPage);
-  //buttonForward.addEventListener("click", validationName);
+  //buttonBack.addEventListener("click", backDeliveryPage);
+
+  buttonForward.addEventListener("click", validationNameRecipient);
 });

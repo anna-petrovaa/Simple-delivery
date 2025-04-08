@@ -117,6 +117,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function validationPatronymicRecipient(event) {
     event.preventDefault();
+
+    errorPatronymicOneRecipient.classList.add("none");
+    errorPatronymicTwoRecipient.classList.add("none");
+
     if (inputPatronymicRecipient.value.length > 0) {
       let regex1 = /^[а-яА-ЯёЁa-zA-Z]+$/;
       //let regex1 = /^[а-яА-ЯёЁa-zA-Z]+(?:[ -][а-яА-ЯёЁa-zA-Z]+)*$/;

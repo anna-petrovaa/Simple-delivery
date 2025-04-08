@@ -35,14 +35,21 @@
 						<div class="form-item">
 							<label class="input-label"> Имя
 								<input type="text" class="input-name-recipient" placeholder="Имя"> </label>
+								<span class="error-name-recipient-one none">Поле является обязательным</span> 
+								<span class="error-name-recipient-two none">Недопустимый символ в строке</span>
 						</div>
 						<div class="form-item">
 							<label class="input-label"> Отчество
 								<input type="text" class="input-patronymic-recipient" placeholder="Отчество"> </label>
+								<span class="error-patronymic-recipient-one none">Значения заданы с использованием разных алфавитов</span>
+								<span class="error-patronymic-recipient-two none">Некорректный формат</span>
 						</div>
 						<div class="form-item">
 							<label class="input-label "> Номер телефона
-								<input type="tel" class="input-number-recipient" placeholder="Номер телефона"> </label>
+								<input type="tel" class="input-number-recipient" placeholder="+7 (123) 456-78-90"> </label>
+								<!--<span>Введите номер в формате +7 (123) 456-78-90 </span>-->
+								<span class="error-phone-recipient-one none">Поле является обязательным</span> 
+								<span class="error-phone-recipient-two none">Некорректный формат.Введите номер в формате +7(123) 456-78-90 </span> 
 						</div>
 					
 					</div>

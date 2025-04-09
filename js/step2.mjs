@@ -122,9 +122,11 @@ document.addEventListener("DOMContentLoaded", () => {
     errorPatronymicTwoRecipient.classList.add("none");
 
     if (inputPatronymicRecipient.value.length > 0) {
-      let regex1 = /^[а-яА-ЯёЁa-zA-Z]+$/;
+      let regex1 = /^[A-Za-z-]+$/;
+      let regex2 = /^[А-Яа-я-]+$/;
+      //let regex1 = /^[а-яА-ЯёЁa-zA-Z]+$/;
       //let regex1 = /^[а-яА-ЯёЁa-zA-Z]+(?:[ -][а-яА-ЯёЁa-zA-Z]+)*$/;
-      let regex2 =
+      let regex3 =
         /^[^!@#$%^&*()_+=<>?\\/-]*([!@#$%^&*()_+=<>?\\/-]{1,})[^!@#$%^&*()_+=<>?\\/-]*$/;
 
       // if (!regex1.test(inputPatronymicRecipient.value)) {
@@ -140,8 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // }
 
       if (
-        regex1.test(inputPatronymicRecipient.value) &&
-        regex2.test(inputPatronymicRecipient.value)
+        (regex1.test(inputPatronymicRecipient.value) ||
+          regex2.test(inputPatronymicRecipient.value)) &&
+        regex3.test(inputPatronymicRecipient.value)
       ) {
         errorPatronymicTwoRecipient.classList.add("none");
         errorPatronymicOneRecipient.classList.add("none");
@@ -149,17 +152,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (
-        !regex1.test(inputPatronymicRecipient.value) &&
-        regex2.test(inputPatronymicRecipient.value)
+        (!regex1.test(inputPatronymicRecipient.value) ||
+          !regex2.test(inputPatronymicRecipient.value)) &&
+        regex3.test(inputPatronymicRecipient.value)
       ) {
         errorPatronymicTwoRecipient.classList.add("none");
         errorPatronymicOneRecipient.classList.remove("none");
-        console.log("Только алфавит");
+        console.log("Только алфавит некорректный");
       }
 
       if (
         regex1.test(inputPatronymicRecipient.value) &&
-        !regex2.test(inputPatronymicRecipient.value)
+        !regex3.test(inputPatronymicRecipient.value)
       ) {
         errorPatronymicTwoRecipient.classList.add("none");
         errorPatronymicOneRecipient.classList.remove("none");
@@ -168,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (
         !regex1.test(inputPatronymicRecipient.value) &&
-        !regex2.test(inputPatronymicRecipient.value)
+        !regex3.test(inputPatronymicRecipient.value)
       ) {
         errorPatronymicTwoRecipient.classList.remove("none");
         errorPatronymicOneRecipient.classList.remove("none");
@@ -177,7 +181,45 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function validationAlphabet(event) {
+    event.preventDefault();
+
+    errorPatronymicOneRecipient.classList.add("none");
+    //errorPatronymicTwoRecipient.classList.add("none");
+    let inputValue = inputPatronymicRecipient.value;
+
+    if (inputPatronymicRecipient.value.length > 0) {
+      let regex1 = /^[A-Za-z-]+$/;
+      let regex2 = /^[А-Яа-я-]+$/;
+
+      if (regex1.test(inputValue) || regex2.test(inputValue)) {
+        console.log("ВСЁ ОК!!");
+        errorPatronymicOneRecipient.classList.add("none");
+        //errorPatronymicTwoRecipient.classList.add("none");
+      } else {
+        errorPatronymicOneRecipient.classList.remove("none");
+        console.log("Разные языки");
+      }
+    }
+  }
+
+  function validationSpecialCharacters(event) {
+    event.preventDefault();
+
+    errorPatronymicTwoRecipient.classList.add("none");
+    let inputValue = inputPatronymicRecipient.value;
+    let regex = /^(?![-])([a-zA-Zа-яА-ЯёЁ]+(?:[-][a-zA-Zа-яА-ЯёЁ]+)*)(?<![-])$/;
+
+    if (regex.test(inputValue)) {
+      console.log("Ввод корректный ВСЕ ОК");
+      errorPatronymicTwoRecipient.classList.add("none");
+    } else {
+      errorPatronymicTwoRecipient.classList.remove("none");
+      console.log("Лишние спецсимволы");
+    }
+  }
+
   //buttonBack.addEventListener("click", backDeliveryPage);
 
-  buttonForward.addEventListener("click", validationPatronymicRecipient);
+  buttonForward.addEventListener("click", validationSpecialCharacters);
 });

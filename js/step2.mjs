@@ -56,65 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "delivery.html";
   }
 
-  /*function validationSurnameRecipient(event) {
-    event.preventDefault();
-    if (inputSurnameRecipient.value.length == 0) {
-      errorSurnameOneRecipient.classList.remove("none");
-      errorSurnameTwoRecipient.classList.add("none");
-      return false;
-    } else {
-      errorSurnameOneRecipient.classList.add("none");
-    }
-
-    if (!/^[а-я]+$/i.test(inputSurnameRecipient.value)) {
-      errorSurnameTwoRecipient.classList.remove("none");
-      errorSurnameOneRecipient.classList.add("none");
-      return false;
-    } else {
-      console.log("Успех");
-      errorSurnameTwoRecipient.classList.add("none");
-    }
-  }
-
-  function validationNameRecipient(event) {
-    event.preventDefault();
-    if (inputNameRecipient.value.length == 0) {
-      errorNameOneRecipient.classList.remove("none");
-      errorNameTwoRecipient.classList.add("none");
-      return false;
-    } else {
-      errorNameOneRecipient.classList.add("none");
-    }
-
-    if (!/^[а-я]+$/i.test(inputNameRecipient.value)) {
-      errorNameTwoRecipient.classList.remove("none");
-      errorNameOneRecipient.classList.add("none");
-      return false;
-    } else {
-      console.log("Успех имя");
-      errorNameTwoRecipient.classList.add("none");
-    }
-  }
-
-  function validationPhonenumberRecipient(event) {
-    event.preventDefault();
-    if (inputNumberRecipient.value.length == 0) {
-      errorPhoneOneRecipient.classList.remove("none");
-      errorPhoneTwoRecipient.classList.add("none");
-      return;
-    } else {
-      let regex = /^\+7\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/;
-
-      if (!regex.test(inputNumberRecipient.value)) {
-        errorPhoneTwoRecipient.classList.remove("none");
-        errorPhoneOneRecipient.classList.add("none");
-      } else {
-        errorPhoneOneRecipient.classList.add("none");
-        errorPhoneTwoRecipient.classList.add("none");
-      }
-    }
-  }*/
-
   function validationPhonenumber(event, element, error1, error2) {
     event.preventDefault();
     error1.classList.add("none");
@@ -134,28 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  /*function validationAlphabet(event) {
-    event.preventDefault();
-
-    errorPatronymicOneRecipient.classList.add("none");
-    //errorPatronymicTwoRecipient.classList.add("none");
-    let inputValue = inputPatronymicRecipient.value;
-
-    if (inputPatronymicRecipient.value.length > 0) {
-      let regex1 = /^[A-Za-z-]+$/;
-      let regex2 = /^[А-Яа-я-]+$/;
-
-      if (regex1.test(inputValue) || regex2.test(inputValue)) {
-        console.log("ВСЁ ОК!!");
-        errorPatronymicOneRecipient.classList.add("none");
-        //errorPatronymicTwoRecipient.classList.add("none");
-      } else {
-        errorPatronymicOneRecipient.classList.remove("none");
-        console.log("Разные языки");
-      }
-    }
-  }*/
-
   function validationAlphabetGeneral(event, element, error) {
     event.preventDefault();
     error.classList.add("none");
@@ -174,22 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     //}
   }
-
-  // function validationSpecialCharacters(event) {
-  //   event.preventDefault();
-
-  //   errorPatronymicTwoRecipient.classList.add("none");
-  //   let inputValue = inputPatronymicRecipient.value;
-  //   let regex = /^(?![-])([a-zA-Zа-яА-ЯёЁ]+(?:[-][a-zA-Zа-яА-ЯёЁ]+)*)(?<![-])$/;
-
-  //   if (regex.test(inputValue)) {
-  //     console.log("Ввод корректный ВСЕ ОК");
-  //     errorPatronymicTwoRecipient.classList.add("none");
-  //   } else {
-  //     errorPatronymicTwoRecipient.classList.remove("none");
-  //     console.log("Лишние спецсимволы");
-  //   }
-  // }
 
   function validationSpecialCharactersGeneral(event, element, error) {
     event.preventDefault();

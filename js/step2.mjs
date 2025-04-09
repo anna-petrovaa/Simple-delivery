@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "delivery.html";
   }
 
-  function validationSurnameRecipient(event) {
+  /*function validationSurnameRecipient(event) {
     event.preventDefault();
     if (inputSurnameRecipient.value.length == 0) {
       errorSurnameOneRecipient.classList.remove("none");
@@ -113,75 +113,28 @@ document.addEventListener("DOMContentLoaded", () => {
         errorPhoneTwoRecipient.classList.add("none");
       }
     }
-  }
+  }*/
 
-  function validationPatronymicRecipient(event) {
+  function validationPhonenumber(event, element, error1, error2) {
     event.preventDefault();
-
-    errorPatronymicOneRecipient.classList.add("none");
-    errorPatronymicTwoRecipient.classList.add("none");
-
-    if (inputPatronymicRecipient.value.length > 0) {
-      let regex1 = /^[A-Za-z-]+$/;
-      let regex2 = /^[А-Яа-я-]+$/;
-      //let regex1 = /^[а-яА-ЯёЁa-zA-Z]+$/;
-      //let regex1 = /^[а-яА-ЯёЁa-zA-Z]+(?:[ -][а-яА-ЯёЁa-zA-Z]+)*$/;
-      let regex3 =
-        /^[^!@#$%^&*()_+=<>?\\/-]*([!@#$%^&*()_+=<>?\\/-]{1,})[^!@#$%^&*()_+=<>?\\/-]*$/;
-
-      // if (!regex1.test(inputPatronymicRecipient.value)) {
-      //   errorPatronymicOneRecipient.classList.remove("none");
-      //   //errorPatronymicTwoRecipient.classList.add("none");
-      //   console.log("Разный алфавит");
-      // }
-
-      // if (!regex2.test(inputPatronymicRecipient.value)) {
-      //   //errorPatronymicOneRecipient.classList.add("none");
-      //   errorPatronymicTwoRecipient.classList.remove("none");
-      //   console.log("Неккоректный формат");
-      // }
-
-      if (
-        (regex1.test(inputPatronymicRecipient.value) ||
-          regex2.test(inputPatronymicRecipient.value)) &&
-        regex3.test(inputPatronymicRecipient.value)
-      ) {
-        errorPatronymicTwoRecipient.classList.add("none");
-        errorPatronymicOneRecipient.classList.add("none");
-        console.log("Все ок");
-      }
-
-      if (
-        (!regex1.test(inputPatronymicRecipient.value) ||
-          !regex2.test(inputPatronymicRecipient.value)) &&
-        regex3.test(inputPatronymicRecipient.value)
-      ) {
-        errorPatronymicTwoRecipient.classList.add("none");
-        errorPatronymicOneRecipient.classList.remove("none");
-        console.log("Только алфавит некорректный");
-      }
-
-      if (
-        regex1.test(inputPatronymicRecipient.value) &&
-        !regex3.test(inputPatronymicRecipient.value)
-      ) {
-        errorPatronymicTwoRecipient.classList.add("none");
-        errorPatronymicOneRecipient.classList.remove("none");
-        console.log("Только некорректный ввод");
-      }
-
-      if (
-        !regex1.test(inputPatronymicRecipient.value) &&
-        !regex3.test(inputPatronymicRecipient.value)
-      ) {
-        errorPatronymicTwoRecipient.classList.remove("none");
-        errorPatronymicOneRecipient.classList.remove("none");
-        console.log("Все вместе");
+    error1.classList.add("none");
+    error2.classList.add("none");
+    if (element.value.length == 0) {
+      error1.classList.remove("none");
+      return;
+    } else {
+      let regex = /^\+7\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/;
+      if (!regex.test(element.value)) {
+        error2.classList.remove("none");
+        error1.classList.add("none");
+      } else {
+        error1.classList.add("none");
+        error2.classList.add("none");
       }
     }
   }
 
-  function validationAlphabet(event) {
+  /*function validationAlphabet(event) {
     event.preventDefault();
 
     errorPatronymicOneRecipient.classList.add("none");
@@ -201,25 +154,66 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Разные языки");
       }
     }
+  }*/
+
+  function validationAlphabetGeneral(event, element, error) {
+    event.preventDefault();
+    error.classList.add("none");
+    let inputValue = element.value;
+    // if (inputValue.length > 0) {
+    let regex1 = /^[A-Za-z-]+$/;
+    let regex2 = /^[А-Яа-я-]+$/;
+
+    if (regex1.test(inputValue) || regex2.test(inputValue)) {
+      console.log("ВСЁ ОК!!");
+      error.classList.add("none");
+      //errorPatronymicTwoRecipient.classList.add("none");
+    } else {
+      error.classList.remove("none");
+      console.log("Разные языки");
+    }
+    //}
   }
 
-  function validationSpecialCharacters(event) {
+  // function validationSpecialCharacters(event) {
+  //   event.preventDefault();
+
+  //   errorPatronymicTwoRecipient.classList.add("none");
+  //   let inputValue = inputPatronymicRecipient.value;
+  //   let regex = /^(?![-])([a-zA-Zа-яА-ЯёЁ]+(?:[-][a-zA-Zа-яА-ЯёЁ]+)*)(?<![-])$/;
+
+  //   if (regex.test(inputValue)) {
+  //     console.log("Ввод корректный ВСЕ ОК");
+  //     errorPatronymicTwoRecipient.classList.add("none");
+  //   } else {
+  //     errorPatronymicTwoRecipient.classList.remove("none");
+  //     console.log("Лишние спецсимволы");
+  //   }
+  // }
+
+  function validationSpecialCharactersGeneral(event, element, error) {
     event.preventDefault();
-
-    errorPatronymicTwoRecipient.classList.add("none");
-    let inputValue = inputPatronymicRecipient.value;
+    error.classList.add("none");
+    let inputValue = element.value;
     let regex = /^(?![-])([a-zA-Zа-яА-ЯёЁ]+(?:[-][a-zA-Zа-яА-ЯёЁ]+)*)(?<![-])$/;
-
     if (regex.test(inputValue)) {
       console.log("Ввод корректный ВСЕ ОК");
-      errorPatronymicTwoRecipient.classList.add("none");
+      error.classList.add("none");
     } else {
-      errorPatronymicTwoRecipient.classList.remove("none");
+      error.classList.remove("none");
       console.log("Лишние спецсимволы");
     }
   }
 
-  //buttonBack.addEventListener("click", backDeliveryPage);
+  function validationLength(event, element, error) {
+    event.preventDefault();
+    error.classList.add("none");
+    if (element.value.length == 0) {
+      error.remove("none");
+    }
+  }
 
-  buttonForward.addEventListener("click", validationSpecialCharacters);
+  buttonBack.addEventListener("click", backDeliveryPage);
+
+  //buttonForward.addEventListener("click", validationSpecialCharacters);
 });

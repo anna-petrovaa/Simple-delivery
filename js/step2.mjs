@@ -49,6 +49,23 @@ document.addEventListener("DOMContentLoaded", () => {
     ".error-phone-recipient-two"
   );
 
+  //адрес откуда забрать
+
+  const streetSender = document.querySelector(".input-street-sender");
+  const buildingSender = document.querySelector(".input-building-sender");
+  const flatSender = document.querySelector(".input-flat-sender");
+  const noteSender = document.querySelector(".input-note-sender");
+
+  const errorSenderStreetOne = document.querySelector(
+    ".error-street-one-sender"
+  ); //пустая строка
+  const errorSenderStreetTwo = document.querySelector(
+    ".error-street-two-sender"
+  ); //недопустимый символ в строке
+  const errorSenderStreetThree = document.querySelector(
+    ".error-street-three-sender"
+  ); //разные алфавиты
+
   const form = document.querySelector(".form");
 
   function backDeliveryPage(event) {
@@ -75,25 +92,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  //для фамилии имени отчества
   function validationAlphabetGeneral(event, element, error) {
     event.preventDefault();
     error.classList.add("none");
     let inputValue = element.value;
-    // if (inputValue.length > 0) {
-    let regex1 = /^[A-Za-z-]+$/;
-    let regex2 = /^[А-Яа-я-]+$/;
+    if (inputValue.length > 0) {
+      let regex1 = /^[A-Za-z-]+$/;
+      let regex2 = /^[А-Яа-я-]+$/;
 
-    if (regex1.test(inputValue) || regex2.test(inputValue)) {
-      console.log("ВСЁ ОК!!");
-      error.classList.add("none");
-      //errorPatronymicTwoRecipient.classList.add("none");
-    } else {
-      error.classList.remove("none");
-      console.log("Разные языки");
+      if (regex1.test(inputValue) || regex2.test(inputValue)) {
+        console.log("ВСЁ ОК!!");
+        error.classList.add("none");
+        //errorPatronymicTwoRecipient.classList.add("none");
+      } else {
+        error.classList.remove("none");
+        console.log("Разные языки");
+      }
+      //}
     }
-    //}
   }
-
   function validationSpecialCharactersGeneral(event, element, error) {
     event.preventDefault();
     error.classList.add("none");
@@ -116,7 +134,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  buttonBack.addEventListener("click", backDeliveryPage);
+  function validationSenderStreet(event) {
+    event.preventDefault();
 
-  //buttonForward.addEventListener("click", validationSpecialCharacters);
+    errorSenderStreetOne.classList.add("none"); //пустая строка
+    errorSenderStreetTwo.classList.add("none"); //недопустимый символ
+    errorSenderStreetThree.classList.add("none"); //разные алфавиты
+
+    if (streetSender.value.length == 0) {
+      errorSenderStreetOne.classList.remove("none");
+      console.log("Пустая улица отправителя!!");
+      return;
+    } else {
+      let regex1 = /^[A-Za-z-]+$/;
+      let regex2 = /^[А-Яа-я-]+$/;
+      let validChars = /^[a-zA-Z0-9а-яА-ЯёЁ].*[a-zA-Z0-9а-яА-ЯёЁ]$/;
+
+      if (regex1.test(streetSender.value) || regex2.test(streetSender.value)) {
+        console.log("ВСЁ ОК улица отправителя алфавит!!");
+      } else {
+        errorSenderStreetThree.classList.remove("none");
+      }
+
+      if (validChars.test(streetSender.value)) {
+        console.log("Улица отправителя корректна нет спецсимволов");
+      } else {
+        errorSenderStreetTwo.classList.remove("none");
+        console.log("Спецсимвол в улице");
+      }
+    }
+  }
+
+  buttonBack.addEventListener("click", backDeliveryPage);
+  //buttonBack.addEventListener("click", validationSenderStreet);
+  buttonForward.addEventListener("click", validationSenderStreet);
 });

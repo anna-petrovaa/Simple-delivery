@@ -27,6 +27,7 @@
 						<div class="progress-container">
 							<div class="progress-bar"></div>
 						</div>
+						<div class="form-list">
 						<div class="form-item">
 							<label class="input-label"> Фамилия
 								<input type="text" class="input-surname-recipient" placeholder="Фамилия"> </label> 
@@ -51,6 +52,7 @@
 								<span class="error-phone-recipient-one none">Поле является обязательным</span> 
 								<span class="error-phone-recipient-two none">Некорректный формат.Введите номер в формате +7(123) 456-78-90 </span> 
 						</div>
+					</div>
                          <button>Назад</button>
 						<button>Продолжить</button>
 					
@@ -61,7 +63,7 @@
 
 
                     <!--Шаг 3 Отправитель начало-->
-          <div class="form-step " id="step3">
+          <div class="form-step none" id="step3">
 						<h2 class="right-container-h2">Отправитель</h2> <span class="progress-container-span">Шаг 3 из 7</span>
 						<div class="progress-container">
 							<div class="progress-bar"></div>
@@ -91,7 +93,7 @@
                    
 					<!--Шаг 4 Откуда забрать начало-->
 
-          <div class="form-step" id="step4">
+          <div class="form-step none" id="step4">
 						<h2 class="right-container-h2">Откуда забирать</h2> <span class="progress-container-span">Шаг 4 из 7</span>
 						<div class="progress-container">
 							<div class="progress-bar"></div>
@@ -127,32 +129,42 @@
 			<!--Шаг 5 Куда доставить начало-->
 					 
 
-          <div class="form-step" id="step5">
+          <div class="form-step none" id="step5">
 						<h2 class="right-container-h2">Куда доставить</h2> <span class="progress-container-span">Шаг 5 из 7</span>
 						<div class="progress-container">
 							<div class="progress-bar"></div>
 						</div>
 						<div class="form-item">
 							<label class="input-label"> Улица
-								<input type="text" class="input-surname" placeholder="Фамилия"> </label> <span class="error-surname-one none">	
-                Поле является обязательным</span> <span class="error-surname-two none">	
-                  Недопустимый символ в строке</span> </div>
+								<input type="text" class="input-street-recipient" placeholder="Улица"> </label>
+								<span class="error-street-one-recipient none">Поле является обязательным</span> 
+								<span class="error-street-two-recipient none">Недопустимый символ в строке</span> 
+							    <span class="error-street-three-recipient none">Разные алфавиты</span> 
+							</div>
 						<div class="form-item">
 							<label class="input-label"> Дом
-								<input type="text" class="input-name" placeholder="Имя"> </label>
+								<input type="text" class="input-building-recipient" placeholder="Дом"> </label>
+								<span class="error-building-one-recipient none">Поле является обязательным</span> 
+								<span class="error-building-two-recipient none">Недопустимый символ в строке</span> 
+							    <span class="error-building-three-recipient none">Разные алфавиты</span> 
 						</div>
 						<div class="form-item">
 							<label class="input-label"> Квартира
-								<input type="text" class="input-patronymic" placeholder="Отчество"> </label>
-						</div>
-						<div class="form-item">
-							<label class="input-label "> Заметка для курьера
-								<input type="text" class="input-number" placeholder="Номер телефона"> </label>
-						</div>
+								<input type="text" class="input-flat-recipient" placeholder="Квартира"> </label>
+	                            <span class="error-flat-two-recipient none">Недопустимый символ в строке</span> 
+							</div>
+							<div class="form-item">
+								<label class="input-label "> Заметка для курьера
+									<input type="text" class="input-note-recipient" placeholder="Заметка для курьера"> </label>
+									<span class="error-building-two-recipient none">Недопустимый символ в строке</span> 
+							         <span class="error-building-three-recipient none">Разные алфавиты</span> 
+							</div>		  
 
-            <div class="form-item">
+					
+
+            <div class="form-item none">
 							<label class="input-label "> Оставить у двери
-								<input  type="checkbox" class="input-number" placeholder="Номер телефона"> </label>
+								<input  type="checkbox" class="input-checkbox-recipient" > </label>
 						</div>
 
 						<button>Назад</button>
@@ -163,7 +175,7 @@
 
 
                     <!--Шаг 6 Оплата начало -->
-          <div class="form-step" id="step6">
+          <div class="form-step none " id="step6">
 						<h2 class="right-container-h2">Оплата доставки</h2> <span class="progress-container-span">Шаг 6 из 7</span>
 						<div class="progress-container">
 							<div class="progress-bar"></div>

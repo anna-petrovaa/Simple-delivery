@@ -165,6 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function validationSenderBuilding(event) {
+    event.preventDefault();
+  }
+
   buttonBack.addEventListener("click", backDeliveryPage);
   //buttonBack.addEventListener("click", validationSenderStreet);
   buttonForward.addEventListener("click", validationSenderStreet);

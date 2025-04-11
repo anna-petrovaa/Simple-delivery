@@ -203,6 +203,22 @@ input:focus {
   border: 1px solid var(--mainColor);
 }
 
+.button-container-recipient {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  max-width: 464px;
+}
+
+.button-back-recipient,
+.button-forward-recipient {
+  max-width: 220px;
+  max-height: 56px;
+  width: 40%;
+  padding: 16px 32px;
+  border-radius: 16px;
+}
+
 .button-container {
   display: flex;
   flex-direction: row;

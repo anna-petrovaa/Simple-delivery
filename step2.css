@@ -90,6 +90,10 @@ main {
   display: none;
 }
 
+.color-error {
+  color: red;
+}
+
 /*
 body{
     height: 100%;
@@ -150,11 +154,51 @@ header{
   border-radius: 5px;
 }
 
-.progress-bar {
+.progress-bar-step2 {
   height: 100%;
   background-color: #4caf50;
   border-radius: 5px;
-  width: 24%; /* Начальная ширина */
+  width: 28%; /* Начальная ширина */
+  transition: width 0.5s ease; /* Плавный переход */
+}
+
+.progress-bar-step3 {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  width: 42%; /* Начальная ширина */
+  transition: width 0.5s ease; /* Плавный переход */
+}
+
+.progress-bar-step4 {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  width: 56%; /* Начальная ширина */
+  transition: width 0.5s ease; /* Плавный переход */
+}
+
+.progress-bar-step5 {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  width: 70%; /* Начальная ширина */
+  transition: width 0.5s ease; /* Плавный переход */
+}
+
+.progress-bar-step6 {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  width: 84%; /* Начальная ширина */
+  transition: width 0.5s ease; /* Плавный переход */
+}
+
+.progress-bar-step7 {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  width: 100%; /* Начальная ширина */
   transition: width 0.5s ease; /* Плавный переход */
 }
 
@@ -197,13 +241,43 @@ input {
   color: var(--labelColor);
 }
 
+.input-checkbox-recipient {
+  max-width: 20px;
+  max-height: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 0px;
+  /*display: flex;
+  flex-direction: row;*/
+}
+
+.input-label-checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.form-item.input-checkbox-recipient {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  /*border: 1px solid red;*/
+}
+
+.input-checkbox-recipient-span {
+  align-items: center;
+}
+
 input:focus {
   outline: none;
 
   border: 1px solid var(--mainColor);
 }
 
-.button-container-recipient {
+.button-container-recipient,
+.button-container-sender,
+.button-container-send,
+.button-container-get {
   display: flex;
   flex-direction: row;
   gap: 24px;
@@ -211,12 +285,40 @@ input:focus {
 }
 
 .button-back-recipient,
-.button-forward-recipient {
+.button-forward-recipient,
+.button-back-sender,
+.button-forward-sender,
+.button-back-send,
+.button-forward-send,
+.button-back-get,
+.button-forward-get {
   max-width: 220px;
   max-height: 56px;
   width: 40%;
   padding: 16px 32px;
   border-radius: 16px;
+  border-color: transparent;
+}
+
+.button-forward-recipient,
+.button-forward-sender,
+.button-forward-send,
+.button-forward-get {
+  background-color: var(--mainColor);
+  color: var(--whiteColor);
+}
+
+.button-back-recipient:hover,
+.button-forward-recipient:hover,
+.button-back-sender:hover,
+.button-forward-sender:hover,
+.button-back-send:hover,
+.button-forward-send:hover,
+.button-back-get:hover,
+.button-forward-get:hover {
+  background-color: var(--mainColor);
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .button-container {

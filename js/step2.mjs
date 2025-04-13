@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const buttonBack = document.querySelector(".button-back");
   const buttonForward = document.querySelector(".button-forward");
 
+  const buttonBackRecipient = document.querySelector(".button-back-recipient");
   //фамилия
   const inputSurnameRecipient = document.querySelector(
     ".input-surname-recipient"
@@ -416,7 +417,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function validationStep2(event) {}
 
-  buttonBack.addEventListener("click", backDeliveryPage);
+  buttonBackRecipient.addEventListener("click", backDeliveryPage);
   //buttonBack.addEventListener("click", validationSenderStreet);
   buttonForward.addEventListener("click", validationRecipientNote);
 });

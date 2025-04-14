@@ -189,7 +189,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let result = true;
     error.classList.add("none");
     let inputValue = element.value;
-    let regex = /^(?![-])([a-zA-Zа-яА-ЯёЁ]+(?:[-][a-zA-Zа-яА-ЯёЁ]+)*)(?<![-])$/;
+    //let regex = /^(?![-])([a-zA-Zа-яА-ЯёЁ]+(?:[-][a-zA-Zа-яА-ЯёЁ]+)*)(?<![-])$/;
+    let regex =
+      /^(?![-])([a-zA-Zа-яА-ЯёЁ]+(?:[-][a-zA-Zа-яА-ЯёЁ]+)*)?(?<![-])$/;
     if (regex.test(inputValue)) {
       console.log("Ввод корректный ВСЕ ОК");
       error.classList.add("none");

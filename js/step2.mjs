@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const buttonForward = document.querySelector(".button-forward");
 
   const buttonBackRecipient = document.querySelector(".button-back-recipient");
+  const buttonForwardRecipient = document.querySelector(
+    ".button-forward-recipient"
+  );
+
   //фамилия
   const inputSurnameRecipient = document.querySelector(
     ".input-surname-recipient"
@@ -15,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ".error-surname-recipient-two"
   );
 
+  const errorSurnameThreeRecipient = document.querySelector(
+    ".error-surname-recipient-three"
+  ); //алфавиты
+
   //имя
   const inputNameRecipient = document.querySelector(".input-name-recipient");
   const errorNameOneRecipient = document.querySelector(
@@ -23,6 +31,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const errorNameTwoRecipient = document.querySelector(
     ".error-name-recipient-two"
+  );
+
+  const errorNameThreeRecipient = document.querySelector(
+    ".error-name-recipient-three"
   );
 
   //отчество
@@ -129,28 +141,31 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "delivery.html";
   }
 
-  function validationPhonenumber(event, element, error1, error2) {
-    event.preventDefault();
+  function validationPhonenumber(element, error1, error2) {
+    let result = true;
     error1.classList.add("none");
     error2.classList.add("none");
     if (element.value.length == 0) {
       error1.classList.remove("none");
-      return;
+      result = false;
+      return result;
     } else {
       let regex = /^\+7\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/;
       if (!regex.test(element.value)) {
         error2.classList.remove("none");
         error1.classList.add("none");
+        result = false;
       } else {
         error1.classList.add("none");
         error2.classList.add("none");
       }
     }
+    return result;
   }
 
   //для фамилии имени отчества
-  function validationAlphabetGeneral(event, element, error) {
-    event.preventDefault();
+  function validationAlphabetGeneral(element, error) {
+    let result = false;
     error.classList.add("none");
     let inputValue = element.value;
     if (inputValue.length > 0) {
@@ -160,16 +175,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (regex1.test(inputValue) || regex2.test(inputValue)) {
         console.log("ВСЁ ОК!!");
         error.classList.add("none");
-        //errorPatronymicTwoRecipient.classList.add("none");
+        result = true;
       } else {
         error.classList.remove("none");
         console.log("Разные языки");
+        result = false;
       }
-      //}
     }
+    return result;
   }
-  function validationSpecialCharactersGeneral(event, element, error) {
-    event.preventDefault();
+  function validationSpecialCharactersGeneral(element, error) {
+    //event.preventDefault();
+    let result = true;
     error.classList.add("none");
     let inputValue = element.value;
     let regex = /^(?![-])([a-zA-Zа-яА-ЯёЁ]+(?:[-][a-zA-Zа-яА-ЯёЁ]+)*)(?<![-])$/;
@@ -178,16 +195,21 @@ document.addEventListener("DOMContentLoaded", () => {
       error.classList.add("none");
     } else {
       error.classList.remove("none");
+      result = false;
       console.log("Лишние спецсимволы");
     }
+    return result;
   }
 
-  function validationLength(event, element, error) {
-    event.preventDefault();
+  function validationLength(element, error) {
+    //event.preventDefault();
+    let result = true;
     error.classList.add("none");
     if (element.value.length == 0) {
-      error.remove("none");
+      error.classList.remove("none");
+      result = false;
     }
+    return result;
   }
 
   function validationSenderStreet(event) {
@@ -415,8 +437,75 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function validationStep2(event) {}
+  function validationStep2(event) {
+    event.preventDefault();
+    let isValid = true;
+    //фамилия
+    let checkSurnameLength = validationLength(
+      inputSurnameRecipient,
+      errorSurnameOneRecipient
+    );
 
+    let checkSurnameAlphabet = validationAlphabetGeneral(
+      inputSurnameRecipient,
+      errorSurnameThreeRecipient
+    );
+    let checkSurnameSpecialCharacters = validationSpecialCharactersGeneral(
+      inputSurnameRecipient,
+      errorSurnameTwoRecipient
+    );
+    if (
+      !checkSurnameLength ||
+      !checkSurnameAlphabet ||
+      !checkSurnameSpecialCharacters
+    ) {
+      isValid = false;
+    }
+
+    //имя
+    let checkNameLength = validationLength(
+      inputNameRecipient,
+      errorNameOneRecipient
+    );
+
+    let checkNameAlphabet = validationAlphabetGeneral(
+      inputNameRecipient,
+      errorNameThreeRecipient
+    );
+    let checkNameSpecialCharacters = validationSpecialCharactersGeneral(
+      inputNameRecipient,
+      errorNameTwoRecipient
+    );
+    if (!checkNameLength || !checkNameAlphabet || !checkNameSpecialCharacters) {
+      isValid = false;
+    }
+    //отчество
+
+    let checkPatronymicAlphabet = validationAlphabetGeneral(
+      inputPatronymicRecipient,
+      errorPatronymicOneRecipient
+    );
+    let checkPatronymicSpecialCharacters = validationSpecialCharactersGeneral(
+      inputPatronymicRecipient,
+      errorPatronymicTwoRecipient
+    );
+    if (!checkPatronymicAlphabet || !checkPatronymicSpecialCharacters) {
+      isValid = false;
+    }
+    //телефон
+    let checkPhonenumber = validationPhonenumber(
+      inputNumberRecipient,
+      errorPhoneOneRecipient,
+      errorPhoneTwoRecipient
+    );
+    if (!checkPhonenumber) {
+      isValid = false;
+    }
+  }
+
+  //validationStep2();
+
+  buttonForwardRecipient.addEventListener("click", validationStep2);
   buttonBackRecipient.addEventListener("click", backDeliveryPage);
   //buttonBack.addEventListener("click", validationSenderStreet);
   buttonForward.addEventListener("click", validationRecipientNote);

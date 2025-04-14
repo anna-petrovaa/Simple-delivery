@@ -134,6 +134,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ".error-note-three-recipient"
   ); //разные алфавиты
 
+  const formStepTwo = document.querySelector(".form-step-2");
+  const formStepThree = document.querySelector(".form-step-3");
+  const formStepFour = document.querySelector(".form-step-4");
+  const formStepFive = document.querySelector(".form-step-5");
+  const formStepSix = document.querySelector(".form-step-6");
+  const formStepSeven = document.querySelector(".form-step-7");
+
   const form = document.querySelector(".form");
 
   function backDeliveryPage(event) {
@@ -165,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //для фамилии имени отчества
   function validationAlphabetGeneral(element, error) {
-    let result = false;
+    let result = true;
     error.classList.add("none");
     let inputValue = element.value;
     if (inputValue.length > 0) {
@@ -173,12 +180,12 @@ document.addEventListener("DOMContentLoaded", () => {
       let regex2 = /^[А-Яа-я-]+$/;
 
       if (regex1.test(inputValue) || regex2.test(inputValue)) {
-        console.log("ВСЁ ОК!!");
+        //console.log("ВСЁ ОК!!");
         error.classList.add("none");
         result = true;
       } else {
         error.classList.remove("none");
-        console.log("Разные языки");
+        //console.log("Разные языки");
         result = false;
       }
     }
@@ -193,12 +200,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let regex =
       /^(?![-])([a-zA-Zа-яА-ЯёЁ]+(?:[-][a-zA-Zа-яА-ЯёЁ]+)*)?(?<![-])$/;
     if (regex.test(inputValue)) {
-      console.log("Ввод корректный ВСЕ ОК");
+      //console.log("Ввод корректный ВСЕ ОК");
       error.classList.add("none");
     } else {
       error.classList.remove("none");
       result = false;
-      console.log("Лишние спецсимволы");
+      //console.log("Лишние спецсимволы");
     }
     return result;
   }
@@ -358,8 +365,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function validationRecipientBuilding(event) {
-    event.preventDefault();
+  function validationRecipientBuilding() {
+    //event.preventDefault();
     errorRecipientBuildingOne.classList.add("none");
     errorRecipientBuildingTwo.classList.add("none");
     errorRecipientBuildingThree.classList.add("none");
@@ -413,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
     errorRecipientNoteTwo.classList.add("none");
     errorRecipientNoteThree.classList.add("none");
     if (noteRecipient.value.length == 0) {
-      console.log("Пустая заметка отправителя");
+      //console.log("Пустая заметка отправителя");
       return;
     } else {
       let regex1 = /^[A-Za-z-0-9]+$/; //алфавит
@@ -424,7 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
         regex1.test(noteRecipient.value) ||
         regex2.test(noteRecipient.value)
       ) {
-        console.log("ВСЁ ОК заметка отправителя алфавит!!");
+        //console.log("ВСЁ ОК заметка отправителя алфавит!!");
       } else {
         errorRecipientNoteThree.classList.remove("none");
         console.log("заметка отправителя содержит разный алфавит!!");
@@ -440,7 +447,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function validationStep2(event) {
-    event.preventDefault();
     let isValid = true;
     //фамилия
     let checkSurnameLength = validationLength(
@@ -505,9 +511,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  //validationStep2();
+  //переход на шаг 3
+  function forwardStep3(event) {
+    event.preventDefault();
+    let result = validationStep2();
+    if (result) {
+      formStepTwo.classList.add("none");
+      formStepThree.classList.remove("none");
+    }
+  }
 
-  buttonForwardRecipient.addEventListener("click", validationStep2);
+  function validationStep3() {}
+
+  buttonForwardRecipient.addEventListener("click", forwardStep3);
   buttonBackRecipient.addEventListener("click", backDeliveryPage);
   //buttonBack.addEventListener("click", validationSenderStreet);
   buttonForward.addEventListener("click", validationRecipientNote);

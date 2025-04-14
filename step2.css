@@ -202,10 +202,24 @@ header{
   transition: width 0.5s ease; /* Плавный переход */
 }
 
-.form-step {
+.form-step-2,
+.form-step-3,
+.form-step-4,
+.form-step-5,
+.form-step-6,
+.form-step-7 {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+
+.form-step-2.none,
+.form-step-3.none,
+.form-step-4.none,
+.form-step-5.none,
+.form-step-6.none,
+.form-step-7.none {
+  display: none;
 }
 
 .form-item {

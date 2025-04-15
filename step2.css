@@ -305,9 +305,9 @@ input:focus {
 .button-back-send,
 .button-forward-send,
 .button-back-get,
-.button-forward-get,.button-forward,
-.button-back
- {
+.button-forward-get,
+.button-forward,
+.button-back {
   max-width: 220px;
   max-height: 56px;
   width: 40%;
@@ -320,7 +320,7 @@ input:focus {
 .button-forward-sender,
 .button-forward-send,
 .button-forward-get,
-.button-forward{
+.button-forward {
   background-color: var(--mainColor);
   color: var(--whiteColor);
 }
@@ -394,4 +394,21 @@ section {
   flex-direction: column;
   justify-content: end;
   align-items: flex-end;
+}
+
+.form_radio label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 0;
+  line-height: 18px;
+}
+
+.input-radio {
+  width: 20px;
+  height: 20px;
+
+  background: var(--mainColor);
+  border-radius: 500px;
 }

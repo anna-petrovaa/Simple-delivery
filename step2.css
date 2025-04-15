@@ -305,7 +305,9 @@ input:focus {
 .button-back-send,
 .button-forward-send,
 .button-back-get,
-.button-forward-get {
+.button-forward-get,.button-forward,
+.button-back
+ {
   max-width: 220px;
   max-height: 56px;
   width: 40%;
@@ -317,7 +319,8 @@ input:focus {
 .button-forward-recipient,
 .button-forward-sender,
 .button-forward-send,
-.button-forward-get {
+.button-forward-get,
+.button-forward{
   background-color: var(--mainColor);
   color: var(--whiteColor);
 }
@@ -329,7 +332,9 @@ input:focus {
 .button-back-send:hover,
 .button-forward-send:hover,
 .button-back-get:hover,
-.button-forward-get:hover {
+.button-forward-get:hover,
+.button-forward:hover,
+.button-back:hover {
   background-color: var(--mainColor);
   opacity: 0.5;
   cursor: pointer;

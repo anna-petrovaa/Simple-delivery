@@ -202,6 +202,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const radioRecipient = document.querySelector(".radio-recipient");
   const errorRadioSender = document.querySelector(".error-radio-sender");
 
+  const stepSevenRecipientFio = document.querySelector(".recipient-fio");
+  const stepSevenRecipientPhone = document.querySelector(".recipient-phone");
+
   function backDeliveryPage(event) {
     event.preventDefault();
     window.location.href = "delivery.html";
@@ -698,6 +701,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function forwardStep7(event) {
     event.preventDefault();
 
+    renderSevenStepGeneral(
+      inputSurnameRecipient,
+      inputNameRecipient,
+      inputPatronymicRecipient,
+      stepSevenRecipientFio,
+      stepSevenRecipientPhone
+    );
+
     if (radioSender.checked && radioRecipient.checked) {
       errorRadioSender.classList.remove("none");
     }
@@ -734,6 +745,36 @@ document.addEventListener("DOMContentLoaded", () => {
     formStepFour.classList.add("none");
   }
 
+  /*function renderStep7Info() {
+    //stepSevenRecipientFio.innerHTML = "";
+
+    let valuesRecipientFio = [
+      inputSurnameRecipient.value,
+      inputNameRecipient.value,
+      inputPatronymicRecipient.value,
+    ]
+      .filter(Boolean)
+      .join(" ");
+
+    stepSevenRecipientFio.textContent = valuesRecipientFio;
+    stepSevenRecipientPhone.textContent = inputNumberRecipient.value;
+  }*/
+
+  function renderSevenStepGeneral(
+    inputFirst,
+    inputSecond,
+    inputThird,
+    cardElemFirst,
+    cardElemSecond
+  ) {
+    let values = [inputFirst.value, inputSecond.value, inputThird.value]
+      .filter(Boolean)
+      .join(" ");
+
+    cardElemFirst.textContent = values;
+    cardElemSecond.textContent = inputNumberRecipient.value;
+  }
+
   function saveDataForm() {}
 
   buttonForwardRecipient.addEventListener("click", forwardStep3);
@@ -748,4 +789,5 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonForwardStep5.addEventListener("click", forwardStep6);
   buttonBack.addEventListener("click", backStep6);
   buttonForward.addEventListener("click", forwardStep7);
+  buttonForwardRecipient.addEventListener("click", renderStep7Info);
 });

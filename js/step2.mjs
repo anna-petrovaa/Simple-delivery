@@ -198,6 +198,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const form = document.querySelector(".form");
 
+  const radioSender = document.querySelector(".radio-sender");
+  const radioRecipient = document.querySelector(".radio-recipient");
+  const errorRadioSender = document.querySelector(".error-radio-sender");
+
   function backDeliveryPage(event) {
     event.preventDefault();
     window.location.href = "delivery.html";
@@ -691,6 +695,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function forwardStep7(event) {
+    event.preventDefault();
+
+    if (radioSender.checked && radioRecipient.checked) {
+      errorRadioSender.classList.remove("none");
+    }
+    if (!radioSender.checked && !radioRecipient.checked) {
+      errorRadioSender.classList.remove("none");
+    }
+
+    if (!radioSender.checked && radioRecipient.checked) {
+      formStepSix.classList.add("none");
+      formStepSeven.classList.remove("none");
+    }
+    if (radioSender.checked && !radioRecipient.checked) {
+      formStepSix.classList.add("none");
+      formStepSeven.classList.remove("none");
+    }
+  }
+
   function backStep6(event) {
     //переход на шаг 5
     event.preventDefault();
@@ -723,4 +747,5 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonBackStep5.addEventListener("click", backStep5);
   buttonForwardStep5.addEventListener("click", forwardStep6);
   buttonBack.addEventListener("click", backStep6);
+  buttonForward.addEventListener("click", forwardStep7);
 });

@@ -94,24 +94,6 @@ main {
   color: red;
 }
 
-/*
-body{
-    height: 100%;
-    width: 100%;
-    font-family:airbnb-c;
-    
-}
-main {
-    max-width: 1440px;
-}
-header{
-    display: flex;
-    justify-content: space-around;
-    background-color: #ffffff;
-    max-width: 1440px;
-    padding: 0px 240px;
-}*/
-
 .navigation {
   font-size: 16px;
   font-family: airbnb-c;
@@ -291,7 +273,9 @@ input:focus {
 .button-container-recipient,
 .button-container-sender,
 .button-container-send,
-.button-container-get {
+.button-container-get,
+.button-container,
+.arrows {
   display: flex;
   flex-direction: row;
   gap: 24px;
@@ -380,15 +364,6 @@ section {
   grid-template-columns: 25% 45% 25% 5%;
 }
 
-/*.item1{
-    
-    /*max-width: 200px;
-    max-height: 40px;*/
-/*padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 48px; так не надо!!
-}*/
-
 .info {
   display: flex;
   flex-direction: column;
@@ -396,19 +371,64 @@ section {
   align-items: flex-end;
 }
 
-.form_radio label {
-  display: inline-block;
-  cursor: pointer;
-  position: relative;
-  padding-left: 25px;
-  margin-right: 0;
-  line-height: 18px;
+.input-radio {
+  position: absolute; /* Скрываем реальную радиокнопку */
+  opacity: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
 }
 
-.input-radio {
+/* Чтобы отобразить кастомный элемент 
+.checkmark {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--greyColor);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+/*.checkmark:checked ~ .checkmark::before {
+  content: url("/assets/Vector.png"); /* Добавляем символ галочки */
+/*position: absolute; /* Абсолютное позиционирование */
+/*top: 50%; /* Центрируем по вертикали */
+/*left: 50%; /* Центрируем по горизонтали */
+/*transform: translate(-50%, -50%); /* Идеально центрируем */
+/*border: 2px solid var(--mainColor);
+  color: #ffffff;
+}
+
+/*input:checked ~ .checkmark {
+  background-color: #514caf; /* Когда выбран, меняем фон 
+  border-color: #4caf50;
+}*/
+
+.checkmark {
   width: 20px;
   height: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+  border: 2px solid #aaa;
+  position: relative;
+  display: inline-block;
+}
 
-  background: var(--mainColor);
-  border-radius: 500px;
+input:checked ~ .checkmark {
+  background-color: var(--mainColor); /* Когда выбран, меняем фон */
+  border-color: var(--mainColor);
+}
+
+input:checked ~ .checkmark::before {
+  content: url(/assets/Vector.png);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрируем */
+}
+
+label {
+  display: flex;
+  flex-direction: row;
 }

@@ -218,21 +218,31 @@
 						<div class="progress-container">
 							<div class="progress-bar-step6"></div>
 						</div>
-						<div class="form-item form_radio">
-							<label class="input-label"> Получатель
-								<input type="radio" class="input-radio" name="payment"  value="1" id=""> </label> 
+						<div class="form_radio">
+							<label class="input-label"> 
+								
+								Получатель
+								<input type="radio" class="input-radio radio-recipient" name="radio"  value="1" id="" checked> 
+							
+								<span class="checkmark"></span>  
+							</label> 
 						</div>		 
 
-              <div class="form-item form_radio">
+              <div class=" form_radio">
                 <label class="input-label"> Отправитель
-                  <input type="radio" class="input-radio" name="payment"  value="2" id=""> </label> 
+                  <input type="radio" class="input-radio radio-sender" name="radio"  value="2" id="" checked>
+				  <span class="checkmark"></span>  
+				  <span class="label-text">Подпись к чекбоксу</span>
+				 </label> 
                 </div>
+
+				<span class="error-radio-sender color-error none">Выберите один вариант</span>
 						
                 <div  class="arrows">
                   <button type="button" class="button-back">Назад </button>
                   <button type="button" class="button-forward">Продолжить</button>
                 </div>
-					</div>
+									</div>
 					<!--Шаг 6 Оплата конец -->
 
 
@@ -343,8 +353,9 @@
 						</div>
 				
 						<div class="button-container">
-							<!--<button type="button" class="previous" onclick="previousStep(2)">Назад</button> 
-							<button type="submit" class="" onclick="submitForm(event)">Отправить</button>-->
+							
+							<button type="button" class="button-back">Назад </button>
+							<button type="button" class="button-forward">Продолжить</button>
 						</div>
 					</div>
 

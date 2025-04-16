@@ -282,6 +282,12 @@ input:focus {
   max-width: 464px;
 }
 
+.button-container-result {
+  display: flex;
+  flex-direction: row;
+  gap: 600px;
+}
+
 .button-back-recipient,
 .button-forward-recipient,
 .button-back-sender,

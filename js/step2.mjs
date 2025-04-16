@@ -737,7 +737,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function saveDataForm() {}
 
   buttonForwardRecipient.addEventListener("click", forwardStep3);
-  //buttonBackRecipient.addEventListener("click", backDeliveryPage);
+  buttonBackRecipient.addEventListener("click", backDeliveryPage);
   //buttonBack.addEventListener("click", validationSenderStreet);
   //buttonForward.addEventListener("click", validationRecipientNote);
   buttonBackStep3.addEventListener("click", backStep3);

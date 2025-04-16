@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   let calculateData = JSON.parse(localStorage.getItem("calculateData"));
+  let payload = JSON.parse(localStorage.getItem("payload"));
+  console.log(payload, "payload");
 
   if (!calculateData) {
     window.location.href = "index.html";
@@ -29,17 +31,28 @@ document.addEventListener("DOMContentLoaded", () => {
   expressDay.textContent = `${calculateData.options[1].days} рабочих дней`;
 
   function choseDelivery() {
+    let TypeStorage = [];
     if (radioStandart.checked) {
+      TypeStorage.push(calculateData.options[0].type);
       standartCardContainer.classList.add("checked");
       expressCardContainer.classList.remove("checked");
-      //console.log("Standart.checked");
+      payload.type = {
+        type: TypeStorage[0],
+      };
+     
     }
 
     if (radioExpress.checked) {
+      TypeStorage.push(calculateData.options[1].type);
       standartCardContainer.classList.remove("checked");
       expressCardContainer.classList.add("checked");
-      //console.log("Express.checked");
+      
+      payload.type = {
+        type: TypeStorage[0],
+      };
+    
     }
+    localStorage.setItem("payload", JSON.stringify(payload));
     window.location.href = "step2.html";
   }
 

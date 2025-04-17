@@ -205,6 +205,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const stepSevenRecipientFio = document.querySelector(".recipient-fio");
   const stepSevenRecipientPhone = document.querySelector(".recipient-phone");
 
+  const stepSevenSenderFio = document.querySelector(".sender-fio");
+  const stepSevenSenderPhone = document.querySelector(".sender-phone");
+  const stepSevenSenderAdress = document.querySelector(".sender-adress");
+  const stepSevenSenderNote = document.querySelector(".sender-note-card");
+
+  const stepSevenRecipientAdress = document.querySelector(".recipient-adress");
+  const stepSevenRecipientNote = document.querySelector(
+    ".recipient--note-card"
+  );
+
+  const buttonStepSevenRecipientCardOne = document.querySelector(
+    ".button-card-recipient-one"
+  );
+  const buttonStepSevenSenderCardOne = document.querySelector(
+    ".button-card-sender-one"
+  );
+
+  const buttonStepSevenSenderCardTwo = document.querySelector(
+    ".button-card-sender-two"
+  );
+
+  const buttonStepSevenRecipientCardTwo = document.querySelector(
+    ".button-card-recipient-two"
+  );
+
   function backDeliveryPage(event) {
     event.preventDefault();
     window.location.href = "delivery.html";
@@ -665,15 +690,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  /*function validationStep4() {
-    let checkStreet = validationSenderStreet();
-    let checkBuilding = validationSenderBuilding();
-    if (checkStreet && checkBuilding) {
-      formStepFour.classList.add("none");
-      formStepFive.classList.remove("none");
-    }
-  }*/
-
   function forwardStep5(event) {
     event.preventDefault();
     let checkStreet = validationSenderStreet();
@@ -705,8 +721,36 @@ document.addEventListener("DOMContentLoaded", () => {
       inputSurnameRecipient,
       inputNameRecipient,
       inputPatronymicRecipient,
+      inputNumberRecipient,
       stepSevenRecipientFio,
       stepSevenRecipientPhone
+    );
+
+    renderSevenStepGeneral(
+      inputSurnameSender,
+      inputNameSender,
+      inputPatronymicSender,
+      inputNumberSender,
+      stepSevenSenderFio,
+      stepSevenSenderPhone
+    );
+
+    renderSevenStepGeneral(
+      streetSender,
+      buildingSender,
+      flatSender,
+      noteSender,
+      stepSevenSenderAdress,
+      stepSevenSenderNote
+    );
+
+    renderSevenStepGeneral(
+      streetRecipient,
+      buildingRecipient,
+      flatRecipient,
+      noteRecipient,
+      stepSevenRecipientAdress,
+      stepSevenRecipientNote
     );
 
     if (radioSender.checked && radioRecipient.checked) {
@@ -745,25 +789,11 @@ document.addEventListener("DOMContentLoaded", () => {
     formStepFour.classList.add("none");
   }
 
-  /*function renderStep7Info() {
-    //stepSevenRecipientFio.innerHTML = "";
-
-    let valuesRecipientFio = [
-      inputSurnameRecipient.value,
-      inputNameRecipient.value,
-      inputPatronymicRecipient.value,
-    ]
-      .filter(Boolean)
-      .join(" ");
-
-    stepSevenRecipientFio.textContent = valuesRecipientFio;
-    stepSevenRecipientPhone.textContent = inputNumberRecipient.value;
-  }*/
-
   function renderSevenStepGeneral(
     inputFirst,
     inputSecond,
     inputThird,
+    inputFourth,
     cardElemFirst,
     cardElemSecond
   ) {
@@ -772,7 +802,32 @@ document.addEventListener("DOMContentLoaded", () => {
       .join(" ");
 
     cardElemFirst.textContent = values;
-    cardElemSecond.textContent = inputNumberRecipient.value;
+    cardElemSecond.textContent = inputFourth.value;
+  }
+
+  //для возможности редактировать карточку
+  function editFirstCardStep7(event) {
+    event.preventDefault();
+    formStepTwo.classList.remove("none");
+    formStepSeven.classList.add("none");
+  }
+
+  function editSecondCardStep7(event) {
+    event.preventDefault();
+    formStepThree.classList.remove("none");
+    formStepSeven.classList.add("none");
+  }
+
+  function editThirdCardStep7(event) {
+    event.preventDefault();
+    formStepFour.classList.remove("none");
+    formStepSeven.classList.add("none");
+  }
+
+  function editFourthCardStep7(event) {
+    event.preventDefault();
+    formStepFive.classList.remove("none");
+    formStepSeven.classList.add("none");
   }
 
   function saveDataForm() {}
@@ -789,5 +844,12 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonForwardStep5.addEventListener("click", forwardStep6);
   buttonBack.addEventListener("click", backStep6);
   buttonForward.addEventListener("click", forwardStep7);
-  buttonForwardRecipient.addEventListener("click", renderStep7Info);
+  //buttonForwardRecipient.addEventListener("click", renderStep7Info);
+  buttonStepSevenRecipientCardOne.addEventListener("click", editFirstCardStep7);
+  buttonStepSevenSenderCardOne.addEventListener("click", editSecondCardStep7);
+  buttonStepSevenSenderCardTwo.addEventListener("click", editThirdCardStep7);
+  buttonStepSevenRecipientCardTwo.addEventListener(
+    "click",
+    editFourthCardStep7
+  );
 });

@@ -831,9 +831,52 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getDataPayload() {
-    console.log(JSON.parse(localStorage.getItem("payload")));
+    let dataPayload = JSON.parse(localStorage.getItem("payload"));
+    console.log(dataPayload);
+    console.log(typeof (dataPayload.receiverPoint.latitude, "receiverPoint"));
+    return dataPayload;
   }
+
+  function makeObject() {
+    let dataPayload = getDataPayload();
+
+    dataPayload.payload.receiverPoint = {
+      latitude: cityReceiveInfo.latitude,
+      longitude: cityReceiveInfo.longitude,
+    };
+  }
+
   getDataPayload();
+
+  function getId() {
+    let receiverPointId;
+    let dataPayload = getDataPayload();
+    //console.log(dataPayload, "dataPayload");
+    let dataPoints = JSON.parse(localStorage.getItem("points"));
+    //console.log(dataPoints[0].latitude, "dataPoints[0]");
+
+    let senderPointInfo = dataPoints.find((point) => {
+      return (
+        point.latitude == dataPayload.senderPoint.latitude &&
+        point.longitude == dataPayload.senderPoint.longitude
+      );
+    });
+
+    let receiverPointInfo = dataPoints.find((point) => {
+      return (
+        point.latitude == dataPayload.receiverPoint.latitude &&
+        point.longitude == dataPayload.receiverPoint.longitude
+      );
+    });
+
+    //console.log(dataPoints[0].latitude, "dataPoints[0].latitude");
+    //console.log(senderPointInfo, "senderPointInfo");
+    //console.log(senderPointInfo, receiverPointInfo);
+    return [senderPointInfo, receiverPointInfo];
+  }
+  let result = getId();
+  console.log(result, "result");
+
   function saveDataForm() {}
 
   buttonForwardRecipient.addEventListener("click", forwardStep3);

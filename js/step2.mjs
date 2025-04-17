@@ -716,7 +716,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function forwardStep7(event) {
     event.preventDefault();
-
+    //перед тем как перейти на страницу отрисовываем карточки
     renderSevenStepGeneral(
       inputSurnameRecipient,
       inputNameRecipient,
@@ -830,6 +830,10 @@ document.addEventListener("DOMContentLoaded", () => {
     formStepSeven.classList.add("none");
   }
 
+  function getDataPayload() {
+    console.log(JSON.parse(localStorage.getItem("payload")));
+  }
+  getDataPayload();
   function saveDataForm() {}
 
   buttonForwardRecipient.addEventListener("click", forwardStep3);

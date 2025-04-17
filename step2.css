@@ -20,6 +20,8 @@
   --sectionColor: #f5f5f5;
   --whiteColor: #ffffff;
   --bordColor: #e3e5e5;
+  --labelColor: #141c24;
+  --inputColor: #ced2da;
 }
 
 html {
@@ -82,26 +84,15 @@ main {
 
 .none {
   display: none;
-  
 }
 
-/*
-body{
-    height: 100%;
-    width: 100%;
-    font-family:airbnb-c;
-    
+.form-step.none {
+  display: none;
 }
-main {
-    max-width: 1440px;
+
+.color-error {
+  color: red;
 }
-header{
-    display: flex;
-    justify-content: space-around;
-    background-color: #ffffff;
-    max-width: 1440px;
-    padding: 0px 240px;
-}*/
 
 .navigation {
   font-size: 16px;
@@ -134,10 +125,10 @@ header{
   padding: 0px 0px;
 }
 
-.progress-container-span {
+/*.progress-container-span {
   padding-top: 24px;
   padding-bottom: 24px;
-}
+}*/
 .progress-container {
   width: 464px;
   height: 4px;
@@ -145,12 +136,72 @@ header{
   border-radius: 5px;
 }
 
-.progress-bar {
+.progress-bar-step2 {
   height: 100%;
   background-color: #4caf50;
   border-radius: 5px;
-  width: 24%; /* Начальная ширина */
+  width: 28%; /* Начальная ширина */
   transition: width 0.5s ease; /* Плавный переход */
+}
+
+.progress-bar-step3 {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  width: 42%; /* Начальная ширина */
+  transition: width 0.5s ease; /* Плавный переход */
+}
+
+.progress-bar-step4 {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  width: 56%; /* Начальная ширина */
+  transition: width 0.5s ease; /* Плавный переход */
+}
+
+.progress-bar-step5 {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  width: 70%; /* Начальная ширина */
+  transition: width 0.5s ease; /* Плавный переход */
+}
+
+.progress-bar-step6 {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  width: 84%; /* Начальная ширина */
+  transition: width 0.5s ease; /* Плавный переход */
+}
+
+.progress-bar-step7 {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+  width: 100%; /* Начальная ширина */
+  transition: width 0.5s ease; /* Плавный переход */
+}
+
+.form-step-2,
+.form-step-3,
+.form-step-4,
+.form-step-5,
+.form-step-6,
+.form-step-7 {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-step-2.none,
+.form-step-3.none,
+.form-step-4.none,
+.form-step-5.none,
+.form-step-6.none,
+.form-step-7.none {
+  display: none;
 }
 
 .form-item {
@@ -164,8 +215,119 @@ form {
   padding-top: 24px;
   flex-direction: column;
 }
+
+.form-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 input {
   width: 48%;
+  padding: 12px 8px 12px 12px;
+  max-width: 464px;
+  max-height: 48px;
+  border-radius: 8px;
+  border: 1px solid #ced2da;
+  margin-top: 6px;
+}
+.input-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: var(--labelColor);
+}
+
+.input-checkbox-recipient {
+  max-width: 20px;
+  max-height: 20px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 0px;
+  /*display: flex;
+  flex-direction: row;*/
+}
+
+.input-label-checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.form-item.input-checkbox-recipient {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  /*border: 1px solid red;*/
+}
+
+.input-checkbox-recipient-span {
+  align-items: center;
+}
+
+input:focus {
+  outline: none;
+
+  border: 1px solid var(--mainColor);
+}
+
+.button-container-recipient,
+.button-container-sender,
+.button-container-send,
+.button-container-get,
+.button-container,
+.arrows {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  max-width: 464px;
+}
+
+.button-container-result {
+  display: flex;
+  flex-direction: row;
+  gap: 600px;
+}
+
+.button-back-recipient,
+.button-forward-recipient,
+.button-back-sender,
+.button-forward-sender,
+.button-back-send,
+.button-forward-send,
+.button-back-get,
+.button-forward-get,
+.button-forward,
+.button-back {
+  max-width: 220px;
+  max-height: 56px;
+  width: 40%;
+  padding: 16px 32px;
+  border-radius: 16px;
+  border-color: transparent;
+}
+
+.button-forward-recipient,
+.button-forward-sender,
+.button-forward-send,
+.button-forward-get,
+.button-forward {
+  background-color: var(--mainColor);
+  color: var(--whiteColor);
+}
+
+.button-back-recipient:hover,
+.button-forward-recipient:hover,
+.button-back-sender:hover,
+.button-forward-sender:hover,
+.button-back-send:hover,
+.button-forward-send:hover,
+.button-back-get:hover,
+.button-forward-get:hover,
+.button-forward:hover,
+.button-back:hover {
+  background-color: var(--mainColor);
+  opacity: 0.5;
+  cursor: pointer;
 }
 
 .button-container {
@@ -208,18 +370,71 @@ section {
   grid-template-columns: 25% 45% 25% 5%;
 }
 
-/*.item1{
-    
-    /*max-width: 200px;
-    max-height: 40px;*/
-/*padding-top: 25px;
-    padding-bottom: 25px;
-    padding-left: 48px; так не надо!!
-}*/
-
 .info {
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: flex-end;
+}
+
+.input-radio {
+  position: absolute; /* Скрываем реальную радиокнопку */
+  opacity: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+}
+
+/* Чтобы отобразить кастомный элемент 
+.checkmark {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--greyColor);
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+/*.checkmark:checked ~ .checkmark::before {
+  content: url("/assets/Vector.png"); /* Добавляем символ галочки */
+/*position: absolute; /* Абсолютное позиционирование */
+/*top: 50%; /* Центрируем по вертикали */
+/*left: 50%; /* Центрируем по горизонтали */
+/*transform: translate(-50%, -50%); /* Идеально центрируем */
+/*border: 2px solid var(--mainColor);
+  color: #ffffff;
+}
+
+/*input:checked ~ .checkmark {
+  background-color: #514caf; /* Когда выбран, меняем фон 
+  border-color: #4caf50;
+}*/
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+  border: 2px solid #aaa;
+  position: relative;
+  display: inline-block;
+}
+
+input:checked ~ .checkmark {
+  background-color: var(--mainColor); /* Когда выбран, меняем фон */
+  border-color: var(--mainColor);
+}
+
+input:checked ~ .checkmark::before {
+  content: url(/assets/Vector.png);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрируем */
+}
+
+label {
+  display: flex;
+  flex-direction: row;
 }

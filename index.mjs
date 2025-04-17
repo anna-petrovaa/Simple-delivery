@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       console.log("payload", payload);
+      localStorage.setItem("payload", JSON.stringify(payload));
       //console.log("payloadJSON", JSON.stringify(payload));
 
       const calculateData = await postDeliveryCalc(payload);

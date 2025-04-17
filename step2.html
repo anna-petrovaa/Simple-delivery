@@ -21,36 +21,45 @@
                   <!--Шаг 2 Получатель начало-->
 
 
-					<div class="form-step" id="step2">
+					<div class="form-step-2 " id="step2">
 
 						<h2 class="right-container-h2">Получатель</h2> <span class="progress-container-span">Шаг 2 из 7</span>
 						<div class="progress-container">
-							<div class="progress-bar"></div>
+							<div class="progress-bar-step2"></div>
 						</div>
+						<div class="form-list">
 						<div class="form-item">
 							<label class="input-label"> Фамилия
 								<input type="text" class="input-surname-recipient" placeholder="Фамилия"> </label> 
-								<span class="error-surname-recipient-one none">Поле является обязательным</span> 
-								<span class="error-surname-recipient-two none">Недопустимый символ в строке</span> </div>
+								<span class="error-surname-recipient-one color-error none ">Поле является обязательным</span> 
+								<span class="error-surname-recipient-two color-error none">Недопустимый символ в строке</span> 
+							    <span class="error-surname-recipient-three color-error none">Значения заданы с использованием разных алфавитов </span> 
+							</div>
 						<div class="form-item">
 							<label class="input-label"> Имя
 								<input type="text" class="input-name-recipient" placeholder="Имя"> </label>
-								<span class="error-name-recipient-one none">Поле является обязательным</span> 
-								<span class="error-name-recipient-two none">Недопустимый символ в строке</span>
+								<span class="error-name-recipient-one color-error none">Поле является обязательным</span> 
+								<span class="error-name-recipient-two color-error none">Недопустимый символ в строке</span> 
+								<span class="error-name-recipient-three color-error none">Значения заданы с использованием разных алфавитов </span>
 						</div>
 						<div class="form-item">
 							<label class="input-label"> Отчество
 								<input type="text" class="input-patronymic-recipient" placeholder="Отчество"> </label>
-								<span class="error-patronymic-recipient-one none">Значения заданы с использованием разных алфавитов</span>
-								<span class="error-patronymic-recipient-two none">Некорректный формат</span>
+								<span class="error-patronymic-recipient-one color-error none">Значения заданы с использованием разных алфавитов</span>
+								<span class="error-patronymic-recipient-two color-error none">Некорректный формат</span>
 						</div>
 						<div class="form-item">
 							<label class="input-label "> Номер телефона
 								<input type="tel" class="input-number-recipient" placeholder="+7 (123) 456-78-90"> </label>
 								<!--<span>Введите номер в формате +7 (123) 456-78-90 </span>-->
-								<span class="error-phone-recipient-one none">Поле является обязательным</span> 
-								<span class="error-phone-recipient-two none">Некорректный формат.Введите номер в формате +7(123) 456-78-90 </span> 
+								<span class="error-phone-recipient-one color-error none">Поле является обязательным</span> 
+								<span class="error-phone-recipient-two color-error none">Некорректный формат.Введите номер в формате +7(123) 456-78-90 </span> 
 						</div>
+					</div>
+					<div class="button-container-recipient">
+                         <button class="button-back-recipient">Назад</button>
+						<button class="button-forward-recipient">Продолжить</button>
+					</div>
 					
 					</div>
 					<!--Шаг 2 Получатель конец-->
@@ -59,28 +68,45 @@
 
 
                     <!--Шаг 3 Отправитель начало-->
-          <div class="form-step" id="step3">
+          <div class="form-step-3"  id="step3">
 						<h2 class="right-container-h2">Отправитель</h2> <span class="progress-container-span">Шаг 3 из 7</span>
 						<div class="progress-container">
-							<div class="progress-bar"></div>
+							<div class="progress-bar-step3"></div>
 						</div>
 						<div class="form-item">
 							<label class="input-label"> Фамилия
-								<input type="text" class="input-surname" placeholder="Фамилия"> </label> <span class="error-surname-one none">	
-                Поле является обязательным</span> <span class="error-surname-two none">	
-                  Недопустимый символ в строке</span> </div>
+								<input type="text" class="input-surname-sender" placeholder="Фамилия"> </label> 
+								<span class="error-surname-sender-one color-error none">Поле является обязательным</span> 
+								<span class="error-surname-sender-two color-error none">Недопустимый символ в строке</span> 
+							    <span class="error-surname-sender-three color-error none">Значения заданы с использованием разных алфавитов </span> 
+								
+							</div>
 						<div class="form-item">
 							<label class="input-label"> Имя
-								<input type="text" class="input-name" placeholder="Имя"> </label>
+								<input type="text" class="input-name-sender" placeholder="Имя"> </label>
+								<span class="error-name-sender-one color-error none">Поле является обязательным</span> 
+								<span class="error-name-sender-two  color-error none">Недопустимый символ в строке</span>
+								<span class="error-name-sender-three color-error none">Значения заданы с использованием разных алфавитов </span> 
+
 						</div>
 						<div class="form-item">
 							<label class="input-label"> Отчество
-								<input type="text" class="input-patronymic" placeholder="Отчество"> </label>
+								<input type="text" class="input-patronymic-sender" placeholder="Отчество"> </label>
+								<span class="error-patronymic-sender-one color-error none">Значения заданы с использованием разных алфавитов</span>
+								<span class="error-patronymic-sender-two color-error none">Некорректный формат</span>
+
 						</div>
 						<div class="form-item">
 							<label class="input-label "> Номер телефона
-								<input type="tel" class="input-number" placeholder="Номер телефона"> </label>
+								<input type="tel" class="input-number-sender" placeholder="+7 (123) 456-78-90"> </label>
+								<span class="error-phone-sender-one color-error none ">Поле является обязательным</span> 
+								<span class="error-phone-sender-two  color-error none">Некорректный формат.Введите номер в формате +7(123) 456-78-90 </span> 
 						</div>
+
+						<div class="button-container-sender">
+							<button class="button-back-sender">Назад</button>
+						   <button class="button-forward-sender">Продолжить</button>
+					   </div>
 				
 					</div>
 
@@ -89,28 +115,43 @@
                    
 					<!--Шаг 4 Откуда забрать начало-->
 
-          <div class="form-step" id="step4">
+          <div class="form-step-4" id="step4">
 						<h2 class="right-container-h2">Откуда забирать</h2> <span class="progress-container-span">Шаг 4 из 7</span>
 						<div class="progress-container">
-							<div class="progress-bar"></div>
+							<div class="progress-bar-step4"></div>
 						</div>
 						<div class="form-item">
 							<label class="input-label"> Улица
-								<input type="text" class="input-surname" placeholder="Фамилия"> </label> <span class="error-surname-one none">	
-                Поле является обязательным</span> <span class="error-surname-two none">	
-                  Недопустимый символ в строке</span> </div>
+								<input type="text" class="input-street-sender" placeholder="Улица"> </label> 
+								<span class="error-street-one-sender color-error none">Поле является обязательным</span> 
+								<span class="error-street-two-sender color-error none">Недопустимый символ в строке</span> 
+							    <span class="error-street-three-sender color-error none">Разные алфавиты</span> 
+							
+							</div>
 						<div class="form-item">
 							<label class="input-label"> Дом
-								<input type="text" class="input-name" placeholder="Имя"> </label>
+								<input type="text" class="input-building-sender" placeholder="Дом"> </label>
+								<span class="error-building-one-sender color-error none">Поле является обязательным</span> 
+								<span class="error-building-two-sender color-error none">Недопустимый символ в строке</span> 
+							    <span class="error-building-three-sender color-error none">Разные алфавиты</span> 
 						</div>
 						<div class="form-item">
 							<label class="input-label"> Квартира
-								<input type="text" class="input-patronymic" placeholder="Отчество"> </label>
+								<input type="text" class="input-flat-sender" placeholder="Квартира"> </label>
+								<span class="error-flat-sender color-error none">Недопустимый символ в строке</span>
 						</div>
 						<div class="form-item">
 							<label class="input-label "> Заметка для курьера
-								<input type="text" class="input-number" placeholder="Номер телефона"> </label>
+								<input type="text" class="input-note-sender" placeholder="Заметка для курьера"> </label>
+								<span class="error-note-two-sender color-error none">Недопустимый символ в строке</span> 
+							         <span class="error-note-three-sender color-error none">Разные алфавиты</span> 
 						</div>
+
+						<div class="button-container-send">
+							<button class="button-back-send">Назад</button>
+						   <button class="button-forward-send">Продолжить</button>
+					   </div>
+				
 						
 					</div>
                     
@@ -119,68 +160,100 @@
 			<!--Шаг 5 Куда доставить начало-->
 					 
 
-          <div class="form-step" id="step5">
+          <div class="form-step-5" id="step5">
 						<h2 class="right-container-h2">Куда доставить</h2> <span class="progress-container-span">Шаг 5 из 7</span>
 						<div class="progress-container">
-							<div class="progress-bar"></div>
+							<div class="progress-bar-step5"></div>
 						</div>
 						<div class="form-item">
 							<label class="input-label"> Улица
-								<input type="text" class="input-surname" placeholder="Фамилия"> </label> <span class="error-surname-one none">	
-                Поле является обязательным</span> <span class="error-surname-two none">	
-                  Недопустимый символ в строке</span> </div>
+								<input type="text" class="input-street-recipient" placeholder="Улица"> </label>
+								<span class="error-street-one-recipient color-error none">Поле является обязательным</span> 
+								<span class="error-street-two-recipient color-error none">Недопустимый символ в строке</span> 
+							    <span class="error-street-three-recipient color-error none">Разные алфавиты</span> 
+							</div>
 						<div class="form-item">
 							<label class="input-label"> Дом
-								<input type="text" class="input-name" placeholder="Имя"> </label>
+								<input type="text" class="input-building-recipient" placeholder="Дом"> </label>
+								<span class="error-building-one-recipient color-error none">Поле является обязательным</span> 
+								<span class="error-building-two-recipient color-error none">Недопустимый символ в строке</span> 
+							    <span class="error-building-three-recipient color-error none">Разные алфавиты</span> 
 						</div>
 						<div class="form-item">
 							<label class="input-label"> Квартира
-								<input type="text" class="input-patronymic" placeholder="Отчество"> </label>
-						</div>
-						<div class="form-item">
-							<label class="input-label "> Заметка для курьера
-								<input type="text" class="input-number" placeholder="Номер телефона"> </label>
-						</div>
+								<input type="text" class="input-flat-recipient" placeholder="Квартира"> </label>
+	                            <span class="error-flat-recipient color-error none">Недопустимый символ в строке</span> 
+							</div>
+							<div class="form-item">
+								<label class="input-label "> Заметка для курьера
+									<input type="text" class="input-note-recipient" placeholder="Заметка для курьера"> </label>
+									<span class="error-note-two-recipient color-error none">Недопустимый символ в строке</span> 
+							         <span class="error-note-three-recipient color-error none">Разные алфавиты</span> 
+							</div>		  
 
-            <div class="form-item">
-							<label class="input-label "> Оставить у двери
-								<input  type="checkbox" class="input-number" placeholder="Номер телефона"> </label>
-						</div>
+					
 
+            <div class="form-item ">
+				<label class="input-label-checkbox ">
+				<input  type="checkbox" class="input-checkbox-recipient" >
+							<span class="input-checkbox-recipient-span">Оставить у двери</span>
+							</label>
+						</div>
+						
+						
+
+						<div class="button-container-get">
+							<button class="button-back-get">Назад</button>
+						   <button class="button-forward-get">Продолжить</button>
+					   </div>
+				
 				
 					</div>
 					<!--Шаг 5 Куда доставить конец-->
 
 
                     <!--Шаг 6 Оплата начало -->
-          <div class="form-step" id="step6">
+          <div class="form-step-6" id="step6">
 						<h2 class="right-container-h2">Оплата доставки</h2> <span class="progress-container-span">Шаг 6 из 7</span>
 						<div class="progress-container">
-							<div class="progress-bar"></div>
+							<div class="progress-bar-step6"></div>
 						</div>
-						<div class="form-item">
-							<label class="input-label"> Получатель
-								<input type="radio" class="" name="payment"  value="" id=""> </label> 
-              </div>
+						<div class="form_radio">
+							<label class="input-label"> 
+								
+								Получатель
+								<input type="radio" class="input-radio radio-recipient" name="radio"  value="1" id="" checked> 
+							
+								<span class="checkmark"></span>  
+							</label> 
+						</div>		 
 
-              <div class="form-item">
+              <div class=" form_radio">
                 <label class="input-label"> Отправитель
-                  <input type="radio" class="" name="payment"  value="" id=""> </label> 
+                  <input type="radio" class="input-radio radio-sender" name="radio"  value="2" id="" checked>
+				  <span class="checkmark"></span>  
+				  <span class="label-text">Подпись к чекбоксу</span>
+				 </label> 
                 </div>
+
+				<span class="error-radio-sender color-error none">Выберите один вариант</span>
 						
                 <div  class="arrows">
-                  <button type="button" class="button-back">Назад</button>
+                  <button type="button" class="button-back">Назад </button>
                   <button type="button" class="button-forward">Продолжить</button>
                 </div>
-					
-					</div>
+									</div>
 					<!--Шаг 6 Оплата конец -->
 
 
 
                      <!--Шаг 7 Подтверждение -->
-					<div class="form-step" id="step7">
-						<h2>Подтверждение</h2>
+					<div class="form-step-7 " id="step7">
+						
+						<h2>Подтверждение</h2> <span class="progress-container-span">Шаг 7 из 7</span>
+						<div class="progress-container">
+							<div class="progress-bar-step7"></div>
+						</div>
 						<p>Пожалуйста, подтвердите введенные данные:</p>
 						<ul class="step7-list">
 							<li class="step7-item">
@@ -189,14 +262,14 @@
 									<div class="item1">Получатель</div>
 									<div class="item2">
 										<span>ФИО</span>
-										<p>Иванов ИВАН Иваныч</p>
+										<p class ="recipient-fio"></p>
 									</div>
 									<div class="item3">
 										<span>Телефон</span>
-										<p>8999877897867</p>
+										<p class ="recipient-phone"></p>
 									</div>
 									<div class="item4">
-										<button><img src="/assets/Pencil.png" alt=""></button>
+										<button  class ="button-card-recipient-one"><img src="/assets/Pencil.png" alt=""></button>
 									</div>
 				
 				
@@ -210,14 +283,14 @@
 									<div class="item1">Отправитель</div>
 									<div class="item2">
 										<span>ФИО</span>
-										<p>Иванов ИВАН Иваныч</p>
+										<p class ="sender-fio"></p>
 									</div>
 									<div class="item3">
 										<span>Телефон</span>
-										<p>8999877897867</p>
+										<p class ="sender-phone"></p>
 									</div>
 									<div class="item4">
-										<button><img src="/assets/Pencil.png"  alt=""></button>
+										<button class ="button-card-sender-one"><img src="/assets/Pencil.png"  alt=""></button>
 									</div>
 				
 				
@@ -231,14 +304,14 @@
 									<div class="item1">Откуда забрать</div>
 									<div class="item2">
 										<span>Адрес</span>
-										<p>Улица</p>
+										<p class ="sender-adress"></p>
 									</div>
 									<div class="item3">
 										<span>Заметка</span>
-										<p>офис</p>
+										<p class ="sender-note-card"></p>
 									</div>
 									<div class="item4">
-										<button><img src="/assets/Pencil.png"  alt=""></button>
+										<button class ="button-card-sender-two"><img src="/assets/Pencil.png"  alt=""></button>
 									</div>
 				
 				
@@ -252,14 +325,14 @@
 									<div class="item1">Куда доставить</div>
 									<div class="item2">
 										<span>Адрес</span>
-										<p>Улица</p>
+										<p class = "recipient-adress"></p>
 									</div>
 									<div class="item3">
 										<span>Заметка</span>
-										<p>офис</p>
+										<p class ="recipient--note-card"></p>
 									</div>
 									<div class="item4">
-										<button><img src="/assets/Pencil.png"  alt=""></button>
+										<button  class ="button-card-recipient-two"><img src="/assets/Pencil.png"  alt=""></button>
 									</div>
 				
 				
@@ -273,21 +346,22 @@
 						<button type="submit" onclick="submitForm(event)">Отправить</button>-->
 				
 						<div class="info">
-							<p>Итого</p>
-							<span>Тариф</span>
-							<span>Срок</span>
+							<p class="info-total">Итого  `Привет ${name}!`</p>
+							<span class="info-rate">Тариф</span>
+							<span class="info-term">Срок</span>
 							
 						</div>
 				
-						<div class="button-container">
-							<button type="button" class="previous" onclick="previousStep(2)">Назад</button> 
-							<button type="submit" class="" onclick="submitForm(event)">Отправить</button>
+						<div class="button-container-result">
+							
+							<button type="button" class="button-back">Назад </button>
+							<button type="button" class="button-forward">Отправить</button>
 						</div>
 					</div>
 
                     <!-- Подтверждение конец-->
 
-					Подтверждение конец
+					
 
 
 

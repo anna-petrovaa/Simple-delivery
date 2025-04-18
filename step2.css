@@ -335,6 +335,14 @@ input:focus {
   cursor: pointer;
 }
 
+.button-card-sender-two:hover,
+.button-card-sender-one:hover,
+.button-card-recipient-one:hover,
+.button-card-recipient-two:hover {
+  cursor: pointer;
+  border-color: var(--mainColor);
+}
+
 .button-container {
   display: flex;
   flex-direction: row;
@@ -389,31 +397,6 @@ section {
   height: 0;
   z-index: -1;
 }
-
-/* Чтобы отобразить кастомный элемент 
-.checkmark {
-  width: 16px;
-  height: 16px;
-  border: 2px solid var(--greyColor);
-  border-radius: 50%;
-  position: relative;
-  display: inline-block;
-}
-
-/*.checkmark:checked ~ .checkmark::before {
-  content: url("/assets/Vector.png"); /* Добавляем символ галочки */
-/*position: absolute; /* Абсолютное позиционирование */
-/*top: 50%; /* Центрируем по вертикали */
-/*left: 50%; /* Центрируем по горизонтали */
-/*transform: translate(-50%, -50%); /* Идеально центрируем */
-/*border: 2px solid var(--mainColor);
-  color: #ffffff;
-}
-
-/*input:checked ~ .checkmark {
-  background-color: #514caf; /* Когда выбран, меняем фон 
-  border-color: #4caf50;
-}*/
 
 .checkmark {
   width: 20px;

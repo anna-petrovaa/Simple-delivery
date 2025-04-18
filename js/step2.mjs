@@ -816,6 +816,9 @@ document.addEventListener("DOMContentLoaded", () => {
     cardElemSecond.textContent = inputFourth.value;
   }
 
+  //для отображения инфы под карточками
+  function renderCalcInfo() {}
+
   //для возможности редактировать карточку
   function editFirstCardStep7(event) {
     event.preventDefault();
@@ -968,8 +971,6 @@ document.addEventListener("DOMContentLoaded", () => {
       alert(err);
     }
   }
-
-  function saveDataForm() {}
 
   buttonForwardRecipient.addEventListener("click", forwardStep3);
   buttonBackRecipient.addEventListener("click", backDeliveryPage);

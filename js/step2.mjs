@@ -962,7 +962,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const result = await response.json(); // Преобразуем ответ в JSON
-      console.log("postOrderCreate", result);
+      //console.log("postOrderCreate", result);
       return result;
     } catch (err) {
       alert(err);

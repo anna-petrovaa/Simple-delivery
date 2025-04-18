@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const buttonBack = document.querySelector(".button-back");
   const buttonForward = document.querySelector(".button-forward");
-
+  const buttonSendOrder = document.querySelector(".button-send-order");
+  const buttonBackOrder = document.querySelector(".button-back-order");
   const buttonBackRecipient = document.querySelector(".button-back-recipient");
   const buttonForwardRecipient = document.querySelector(
     ".button-forward-recipient"
@@ -228,6 +229,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const buttonStepSevenRecipientCardTwo = document.querySelector(
     ".button-card-recipient-two"
+  );
+
+  const checkboxNonContact = document.querySelector(
+    ".input-checkbox-recipient"
   );
 
   function backDeliveryPage(event) {
@@ -777,6 +782,12 @@ document.addEventListener("DOMContentLoaded", () => {
     formStepSix.classList.add("none");
   }
 
+  function backStep7(event) {
+    event.preventDefault();
+    formStepSix.classList.remove("none");
+    formStepSeven.classList.add("none");
+  }
+
   function backStep5(event) {
     event.preventDefault();
     formStepFour.classList.remove("none");
@@ -832,29 +843,91 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getDataPayload() {
     let dataPayload = JSON.parse(localStorage.getItem("payload"));
-    console.log(dataPayload);
-    console.log(typeof (dataPayload.receiverPoint.latitude, "receiverPoint"));
+    //console.log(dataPayload);
+    //console.log(typeof (dataPayload.receiverPoint.latitude, "receiverPoint"));
     return dataPayload;
   }
 
-  function makeObject() {
-    let dataPayload = getDataPayload();
+  async function sendOrder(event) {
+    event.preventDefault();
+    let payload = getDataPayload();
+    let point = getPointInfo();
+    try {
+      const order = {};
 
-    dataPayload.payload.receiverPoint = {
-      latitude: cityReceiveInfo.latitude,
-      longitude: cityReceiveInfo.longitude,
-    };
+      order.senderPoint = {
+        id: point[0].id,
+        name: point[0].name,
+        latitude: point[0].latitude,
+        longitude: point[0].longitude,
+      };
+      order.senderAddress = {
+        street: streetSender.value,
+        house: buildingSender.value,
+        apartment: flatSender.value,
+        comment: noteSender.value,
+      };
+      order.sender = {
+        firstname: inputNameSender.value,
+        lastname: inputSurnameSender.value,
+        middlename: inputPatronymicSender.value,
+        phone: inputNumberSender.value,
+      };
+
+      order.receiverPoint = {
+        id: point[1].id,
+        name: point[1].name,
+        latitude: point[1].latitude,
+        longitude: point[1].longitude,
+      };
+
+      order.receiverAddress = {
+        street: streetRecipient.value,
+        house: buildingRecipient.value,
+        apartment: flatRecipient.value,
+        comment: noteRecipient.value,
+        isNonContact: checkboxNonContact.checked,
+      };
+
+      //order.receiverAddress.isNonContact = checkboxNonContact.checked;
+
+      order.receiver = {
+        firstname: inputNameRecipient.value,
+        lastname: inputSurnameRecipient.value,
+        middlename: inputPatronymicRecipient.value,
+        phone: inputNumberRecipient.value,
+      };
+
+      if (radioSender.checked) {
+        order.payer = "SENDER";
+      }
+      if (radioRecipient.checked) {
+        order.payer = "RECEIVER";
+      }
+
+      order.option = {
+        id: payload.option.id,
+        price: payload.option.price,
+        days: payload.option.days,
+        name: payload.option.name,
+        type: payload.option.type,
+      };
+      localStorage.setItem("order", JSON.stringify(order));
+      const orderData = await postOrderCreate(order);
+      localStorage.setItem("orderData", orderData);
+      console.log("orderData", JSON.stringify(orderData));
+    } catch (err) {
+      alert("Ошибка в function sendOrder");
+    }
+    //console.log("order", order);
+    //let datatest = localStorage.getItem("order");
+    //console.log(datatest, "datatest");
+    //console.log(JSON.parse(datatest), "JSON");
   }
 
-  getDataPayload();
-
-  function getId() {
-    let receiverPointId;
+  function getPointInfo() {
     let dataPayload = getDataPayload();
-    //console.log(dataPayload, "dataPayload");
     let dataPoints = JSON.parse(localStorage.getItem("points"));
-    //console.log(dataPoints[0].latitude, "dataPoints[0]");
-
     let senderPointInfo = dataPoints.find((point) => {
       return (
         point.latitude == dataPayload.senderPoint.latitude &&
@@ -868,14 +941,33 @@ document.addEventListener("DOMContentLoaded", () => {
         point.longitude == dataPayload.receiverPoint.longitude
       );
     });
-
-    //console.log(dataPoints[0].latitude, "dataPoints[0].latitude");
-    //console.log(senderPointInfo, "senderPointInfo");
-    //console.log(senderPointInfo, receiverPointInfo);
     return [senderPointInfo, receiverPointInfo];
   }
-  let result = getId();
-  console.log(result, "result");
+
+  async function postOrderCreate(data) {
+    try {
+      const response = await fetch(
+        "https://shift-intensive.ru/api/delivery/order",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json", // Указываем, что отправляем JSON
+          },
+          body: JSON.stringify(data), // Преобразуем данные в JSON
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json(); // Преобразуем ответ в JSON
+      console.log("postOrderCreate", result);
+      return result;
+    } catch (err) {
+      alert(err);
+    }
+  }
 
   function saveDataForm() {}
 
@@ -899,4 +991,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "click",
     editFourthCardStep7
   );
+  buttonBackOrder.addEventListener("click", backStep7);
+  buttonSendOrder.addEventListener("click", sendOrder);
 });

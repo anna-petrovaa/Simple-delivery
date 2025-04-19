@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       const result = await response.json(); // Преобразуем ответ в JSON
-      console.log(" postDeliveryCalc", result);
+      //console.log("postDeliveryCalc", result);
       return result;
     } catch (err) {
       alert(err);

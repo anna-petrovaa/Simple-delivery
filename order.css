@@ -1,0 +1,255 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: airbnb-c;
+  src: url(../fonts/AirbnbCereal_W_Bk.otf);
+}
+@font-face {
+  font-family: eksell-c;
+  src: url(../fonts/Eksell-Display-TRIAL-Medium.ttf);
+}
+
+:root {
+  --mainColor: #3685fb;
+  --darkColor: #000000;
+  --greyColor: #344051;
+  --sectionColor: #f5f5f5;
+  --whiteColor: #ffffff;
+  --bordColor: #e3e5e5;
+  --spanColor: #91a1af;
+  --borderButtonColor: #ced2da;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--whiteColor);
+}
+
+section {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  /*max-width: 1000px;*/
+  background-color: var(--whiteColor);
+  position: fixed;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  margin: 0 15px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none; /* Убираем стандартные маркеры списка */
+
+  margin: auto;
+  width: 100%;
+}
+
+nav ul li {
+  display: flex;
+}
+
+nav ul li a {
+  display: block; /* Чтобы ссылка занимала всю область li */
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+main {
+  margin: auto;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 113px 0px;
+}
+
+.header-container {
+  display: flex;
+  max-width: 1000px;
+  background-color: var(--whiteColor);
+
+  /*position: fixed;*/
+  margin: auto;
+  align-items: center;
+}
+
+.logo {
+  padding: 0px 0px;
+}
+.navigation {
+  font-size: 16px;
+  font-family: airbnb-c;
+  line-height: 112%;
+  text-decoration: none;
+  padding: 20px 30px;
+  color: var(--darkColor);
+  border: 1px solid transparent;
+}
+.navigation:hover {
+  color: var(--mainColor);
+  border: 1px solid var(--mainColor);
+  box-sizing: border-box; /*чтобы текст меньше ехал*/
+}
+
+.button-header {
+  background-color: var(--mainColor);
+  color: #ffffff;
+  border: none;
+  /*border-radius: 10%;*/
+  font-size: 16px;
+  font-weight: 500;
+  width: 70px;
+  height: 40px;
+  margin-left: auto;
+}
+
+section {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  padding: 60px 0px;
+  background-color: var(--whiteColor);
+  margin: auto;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 48px;
+}
+.top-container {
+  display: flex;
+  flex-direction: row;
+  /*gap: 24px;*/
+}
+
+.container-h2 {
+  display: flex;
+  padding-top: 37px;
+}
+.container-h2-span {
+  padding: 24px 0px;
+}
+img {
+  padding: 10px;
+}
+
+.order-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--spanColor);
+  width: 60%;
+  border-radius: 10px;
+  padding: 24px 48px;
+  gap: 24px;
+}
+
+.order-number,
+.order-status,
+.order-point,
+.order-type {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-span {
+  font-size: 12px;
+  color: var(--spanColor);
+}
+
+.info {
+  font-size: 14px;
+  color: var(--spanColor);
+}
+li {
+  list-style: none;
+}
+
+.order-number-p,
+.order-status-p,
+.order-point-p,
+.order-type-p {
+  padding-top: 2px;
+}
+
+.button-container {
+  padding-top: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.button-status,
+.button-mainpage {
+  max-width: 220px;
+  max-height: 56px;
+  width: 40%;
+  padding: 16px 32px;
+  border-radius: 16px;
+  border-color: transparent;
+}
+
+.button-mainpage {
+  background-color: var(--mainColor);
+  color: var(--whiteColor);
+}
+
+.button-status {
+  background-color: var(--whiteColor);
+  color: var(--greyColor);
+  border: 1px solid var(--borderButtonColor);
+}
+
+.button-status:hover,
+.button-mainpage:hover {
+  background-color: var(--mainColor);
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.order-status-p {
+  position: relative;
+  display: inline-flex;
+  padding-left: 16px;
+}
+.order-status-p::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #ffb219;
+  transition: all 1s;
+  border-radius: 50%;
+}
+
+.container-h2-span {
+  font-weight: 400;
+  font-size: 18px;
+}

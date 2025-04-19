@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let calculateData = JSON.parse(localStorage.getItem("calculateData"));
   let payload = JSON.parse(localStorage.getItem("payload"));
-  console.log(payload, "payload");
+  //console.log(payload, "payload");
+  //console.log()
 
   if (!calculateData) {
     window.location.href = "index.html";
@@ -31,26 +32,32 @@ document.addEventListener("DOMContentLoaded", () => {
   expressDay.textContent = `${calculateData.options[1].days} рабочих дней`;
 
   function choseDelivery() {
-    let TypeStorage = [];
+    //let TypeStorage = [];
     if (radioStandart.checked) {
-      TypeStorage.push(calculateData.options[0].type);
+      //TypeStorage.push(calculateData.options[0].type);
       standartCardContainer.classList.add("checked");
       expressCardContainer.classList.remove("checked");
-      payload.type = {
-        type: TypeStorage[0],
+      payload.option = {
+        id: calculateData.options[0].id,
+        price: calculateData.options[0].price,
+        days: calculateData.options[0].days,
+        name: calculateData.options[0].name,
+        type: calculateData.options[0].type,
       };
-     
     }
 
     if (radioExpress.checked) {
-      TypeStorage.push(calculateData.options[1].type);
+      //TypeStorage.push(calculateData.options[1].type);
       standartCardContainer.classList.remove("checked");
       expressCardContainer.classList.add("checked");
-      
-      payload.type = {
-        type: TypeStorage[0],
+
+      payload.option = {
+        id: calculateData.options[1].id,
+        price: calculateData.options[1].price,
+        days: calculateData.options[1].days,
+        name: calculateData.options[1].name,
+        type: calculateData.options[1].type,
       };
-    
     }
     localStorage.setItem("payload", JSON.stringify(payload));
     window.location.href = "step2.html";

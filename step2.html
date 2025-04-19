@@ -68,7 +68,7 @@
 
 
                     <!--Шаг 3 Отправитель начало-->
-          <div class="form-step-3"  id="step3">
+          <div class="form-step-3 none"  id="step3">
 						<h2 class="right-container-h2">Отправитель</h2> <span class="progress-container-span">Шаг 3 из 7</span>
 						<div class="progress-container">
 							<div class="progress-bar-step3"></div>
@@ -115,7 +115,7 @@
                    
 					<!--Шаг 4 Откуда забрать начало-->
 
-          <div class="form-step-4" id="step4">
+          <div class="form-step-4 none" id="step4">
 						<h2 class="right-container-h2">Откуда забирать</h2> <span class="progress-container-span">Шаг 4 из 7</span>
 						<div class="progress-container">
 							<div class="progress-bar-step4"></div>
@@ -160,7 +160,7 @@
 			<!--Шаг 5 Куда доставить начало-->
 					 
 
-          <div class="form-step-5" id="step5">
+          <div class="form-step-5 none" id="step5">
 						<h2 class="right-container-h2">Куда доставить</h2> <span class="progress-container-span">Шаг 5 из 7</span>
 						<div class="progress-container">
 							<div class="progress-bar-step5"></div>
@@ -213,7 +213,7 @@
 
 
                     <!--Шаг 6 Оплата начало -->
-          <div class="form-step-6" id="step6">
+          <div class="form-step-6 none" id="step6">
 						<h2 class="right-container-h2">Оплата доставки</h2> <span class="progress-container-span">Шаг 6 из 7</span>
 						<div class="progress-container">
 							<div class="progress-bar-step6"></div>
@@ -222,7 +222,7 @@
 							<label class="input-label"> 
 								
 								Получатель
-								<input type="radio" class="input-radio radio-recipient" name="radio"  value="1" id="" checked> 
+								<input type="radio" class="input-radio radio-recipient" name="radio"  value="RECEIVER" id="" > 
 							
 								<span class="checkmark"></span>  
 							</label> 
@@ -230,7 +230,7 @@
 
               <div class=" form_radio">
                 <label class="input-label"> Отправитель
-                  <input type="radio" class="input-radio radio-sender" name="radio"  value="2" id="" checked>
+                  <input type="radio" class="input-radio radio-sender" name="radio"  value="SENDER" id="" >
 				  <span class="checkmark"></span>  
 				  <span class="label-text">Подпись к чекбоксу</span>
 				 </label> 
@@ -248,7 +248,7 @@
 
 
                      <!--Шаг 7 Подтверждение -->
-					<div class="form-step-7 " id="step7">
+					<div class="form-step-7" id="step7">
 						
 						<h2>Подтверждение</h2> <span class="progress-container-span">Шаг 7 из 7</span>
 						<div class="progress-container">
@@ -346,7 +346,7 @@
 						<button type="submit" onclick="submitForm(event)">Отправить</button>-->
 				
 						<div class="info">
-							<p class="info-total">Итого  `Привет ${name}!`</p>
+							<p class="info-total">Итого</p>
 							<span class="info-rate">Тариф</span>
 							<span class="info-term">Срок</span>
 							
@@ -354,8 +354,8 @@
 				
 						<div class="button-container-result">
 							
-							<button type="button" class="button-back">Назад </button>
-							<button type="button" class="button-forward">Отправить</button>
+							<button type="button" class="button-back-order">Назад </button>
+							<button type="button" class="button-send-order">Отправить</button>
 						</div>
 					</div>
 

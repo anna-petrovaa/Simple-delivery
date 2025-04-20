@@ -1,1 +1,1 @@
-Educational project
+This is an application that allows you to arrange delivery from home. The application consists of a calculator for calculating the amount of the parcel and filling in the data of both the sender and recipient.

@@ -917,15 +917,13 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       localStorage.setItem("order", JSON.stringify(order));
       const orderData = await postOrderCreate(order);
-      localStorage.setItem("orderData", orderData);
-      console.log("orderData", JSON.stringify(orderData));
+      localStorage.setItem("orderData", JSON.stringify(orderData));
+      window.location.href = "order.html";
+      
     } catch (err) {
       alert("Ошибка в function sendOrder");
     }
-    //console.log("order", order);
-    //let datatest = localStorage.getItem("order");
-    //console.log(datatest, "datatest");
-    //console.log(JSON.parse(datatest), "JSON");
+  
   }
 
   function getPointInfo() {

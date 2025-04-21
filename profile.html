@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/profile.css"> </head>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          <div class="logo">
+              <img src="/assets/logo.png" alt="Логотип">
+          </div>
+          
+          <nav>
+            
+              <a href="#" class="navigation" >Профиль</a>
+                <a href="#" class="navigation">История</a>
+            
+          </nav>
+          <button class="button-header">Выйти</button>
+        
+      </div>
+         </header>
+
+         <main>
+            <section>
+                <div class="main-container">
+                    <h2>Профиль</h2>
+                    <form action="" id="profileForm">
+                        <div class="form-container">
+                          <ul class="form-list">
+                            <li class="form-item">
+                                <label class="input-label">
+                                     <span>Фамилия</span>
+                                    <input type="text" class="input-surname-recipient" placeholder="Фамилия"> </label> 
+                                    <span class="error-surname-one color-error none ">Поле является обязательным</span> 
+                                    <span class="error-surname-two color-error none">Недопустимый символ в строке</span> 
+                                    <span class="error-surname-three color-error none">Значения заданы с использованием разных алфавитов </span> 
+                                </li>
+                            <li class="form-item">
+                                <label class="input-label"> 
+                                    <span>Имя</span>
+                                    <input type="text" class="input-name-recipient" placeholder="Имя"> </label>
+                                    <span class="error-name-one color-error none">Поле является обязательным</span> 
+                                    <span class="error-name-two color-error none">Недопустимый символ в строке</span> 
+                                    <span class="error-name-three color-error none">Значения заданы с использованием разных алфавитов </span>
+                                </li>
+                            <li class="form-item">
+                                <label class="input-label"> 
+                                    <span>Отчество</span>
+                                    <input type="text" class="input-middlename" placeholder="Отчество"> </label>
+                                    <span class="error-middlename-one color-error none">Значения заданы с использованием разных алфавитов</span>
+                                    <span class="error-middlename-two color-error none">Некорректный формат</span>
+                            </li>
+                            <li class="form-item">
+                                <label class="input-label "> 
+                                    <span>Номер телефона</span>
+                                    <input type="tel" class="input-number" placeholder="+7 (123) 456-78-90"> </label>
+                                    
+                                    <span class="error-phone-one color-error none">Поле является обязательным</span> 
+                                    <span class="error-phone-two color-error none">Некорректный формат.Введите номер в формате +7(123) 456-78-90 </span> 
+                            </li>
+
+                            <li class="form-item">
+                                <label class="input-label "> 
+                                    <span>Email</span>
+                                    <input type="email" class="input-email" placeholder="email.ru"> </label>
+                                    
+                                    <span class="error-email-one color-error none">Поле является обязательным</span> 
+                                    <span class="error-email-two color-error none">Некорректный формат.Введите email в формате email.ru </span> 
+                            </li>
+
+                            <li class="form-item">
+                                <label for="city-select"> </label>
+                                <span>Город</span>
+                                <select class="city-select" name="city" id="city-select">
+                                  <option value="">--  Город  --</option>
+                                
+                                </select>
+                            </li>
+                        
+                        
+                        
+                        
+                    </ul>
+                </div>
+                    <button>Обновить данные</button>
+
+                    </form>
+                </div>
+            </section>
+         </main>
+</body>
+</html>

@@ -36,5 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   renderOrderInfo();
+
+
+
+
+
+  
   buttonMainPage.addEventListener("click", backMainPage);
 });

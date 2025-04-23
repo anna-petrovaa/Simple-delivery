@@ -17,7 +17,7 @@ function addSuggestions(parentElement, point) {
 }
 
 //получаем массив городов
-async function getDataCity() {
+export async function getDataCity() {
   try {
     const dataResponse = await fetch(
       `https://shift-intensive.ru/api/delivery/points`
